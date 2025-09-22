@@ -11,11 +11,11 @@ export default function Hero() {
         // Start a subtle shrink + small padding after mount
         controls.start({
             scale: 0.97, // tiny shrink
-            paddingTop: "18px", // subtle padding changes (few pixels)
-            paddingBottom: "18px",
-            paddingLeft: "16px",
-            paddingRight: "16px",
-            borderRadius: "14px", // rounded corners when shrunk
+            paddingTop: "25px", // subtle padding changes (few pixels)
+            paddingBottom: "25px",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            borderRadius: "50px", // rounded corners when shrunk
             transition: { duration: 0.85, ease: [0.2, 0.8, 0.2, 1], delay: 0.45 },
         });
 
