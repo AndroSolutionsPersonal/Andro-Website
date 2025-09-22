@@ -38,10 +38,11 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    // const navigate = useNavigate();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isExpanded, setIsExpanded] = useState(true);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const toggleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -49,20 +50,42 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+                setShowNavbar(false); // hide on scroll down
+            } else {
+                setShowNavbar(true); // show on scroll up
+            }
+            setLastScrollY(window.scrollY);
             setIsScrolled(window.scrollY > 50);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
+        const handleMouseMove = (e) => {
+            if (e.clientY < 80) {
+                setShowNavbar(true); // show if mouse moves near top
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [lastScrollY]);
 
     return (
-        <div className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[10%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}>
+        <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: showNavbar ? 0 : -120 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[10%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}
+        >
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`relative rounded-xl hover: z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
+                className={`relative rounded-xl z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
                 <nav>
                     <a
@@ -71,7 +94,6 @@ const Navbar = () => {
                         <Image src={Logo} alt="Andro Solutions" priority className='w-8 lg:w-12 hover:rotate-360 hover:scale-110 transition-all ease-out duration-700 delay-70' />
                     </a>
                 </nav>
-                {/* <ul className={`max-lg:hidden flex px-4 ml-auto font-semibold font-secondary space-x-12 ${isExpanded ? '' : 'hidden'}`}> */}
                 <ul className={`px-1 lg:px-4 ml-auto font-semibold font-secondary ${isExpanded ? 'hidden' : 'flex space-x-3 text-sm lg:space-x-12'} transition-all duration-150 delay-800 ease-in`}>
                     {navLinks.map((link, idx) => (
                         <li key={link.label}>
@@ -92,7 +114,6 @@ const Navbar = () => {
                         className={`navbar-burger flex self-center`}
                         onClick={(e) => {
                             e.preventDefault();
-                            // toggleSidebar();
                             setIsExpanded(!isExpanded);
                         }}
                     >
@@ -123,7 +144,6 @@ const Navbar = () => {
                                 <a
                                     className={link.mobileClass}
                                     href={link.href}
-
                                     onClick={link.onClick}
                                 >
                                     {link.label}
@@ -133,7 +153,6 @@ const Navbar = () => {
                                     className={link.mobileClass}
                                     onClick={link.onClick}
                                 >
-
                                     {link.label}
                                 </a>
                             )}
@@ -141,7 +160,7 @@ const Navbar = () => {
                     ))}
                 </ul>
             </motion.div>
-        </div>
+        </motion.div>
     );
 }
 
