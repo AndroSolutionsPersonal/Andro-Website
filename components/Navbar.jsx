@@ -55,9 +55,12 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Keep 'Home' and 'About' visible at all times; collapse/expand the remaining links
+    const alwaysLinks = navLinks.slice(0, 2);
+    const collapsibleLinks = navLinks.slice(2);
 
     return (
-        <div className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[10%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}>
+        <div className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}>
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -71,9 +74,22 @@ const Navbar = () => {
                         <Image src={Logo} alt="Andro Solutions" priority className='w-8 lg:w-12 hover:rotate-360 hover:scale-110 transition-all ease-out duration-700 delay-70' />
                     </a>
                 </nav>
-                {/* <ul className={`max-lg:hidden flex px-4 ml-auto font-semibold font-secondary space-x-12 ${isExpanded ? '' : 'hidden'}`}> */}
-                <ul className={`px-1 lg:px-4 ml-auto font-semibold font-secondary ${isExpanded ? 'hidden' : 'flex space-x-3 text-sm lg:space-x-12'} transition-all duration-150 delay-800 ease-in`}>
-                    {navLinks.map((link, idx) => (
+                {/* top-level links: show Home & About always; show remaining links only when menu is expanded */}
+                <ul className={`px-1 lg:px-4 font-semibold font-secondary flex items-center justify-center space-x-3 text-sm lg:space-x-12 transition-all duration-150 delay-800 ease-in`}>
+                    {alwaysLinks.map((link) => (
+                        <li key={link.label}>
+                            <nav>
+                                <a
+                                    className={link.className}
+                                    href={link.href}
+                                >
+                                    {link.label}
+                                </a>
+                            </nav>
+                        </li>
+                    ))}
+
+                    {!isExpanded && collapsibleLinks.map((link) => (
                         <li key={link.label}>
                             <nav>
                                 <a
