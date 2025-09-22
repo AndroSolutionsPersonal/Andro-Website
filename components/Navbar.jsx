@@ -82,7 +82,7 @@ const Navbar = () => {
             initial={{ y: 0 }}
             animate={{ y: showNavbar ? 0 : -120 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}
+            className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[37%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}
         >
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
