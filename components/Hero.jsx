@@ -15,7 +15,7 @@ export default function Hero() {
             paddingBottom: "25px",
             paddingLeft: "20px",
             paddingRight: "20px",
-            borderRadius: "50px", // rounded corners when shrunk
+            borderRadius: "30px", // rounded corners when shrunk
             transition: { duration: 0.85, ease: [0.2, 0.8, 0.2, 1], delay: 0.45 },
         });
 
