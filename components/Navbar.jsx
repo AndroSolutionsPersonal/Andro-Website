@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
-import toast from 'react-hot-toast';
-import Logo from '../assets/logos/Logo-2.png'
+import Logo from '@/public/Logo-2.png'
 import { motion } from "framer-motion";
 
 const navLinks = [
@@ -11,42 +10,38 @@ const navLinks = [
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-        onClick: undefined,
     },
     {
         label: 'About',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-        onClick: undefined,
     },
     {
         label: 'Services',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-        onClick: undefined,
     },
     {
         label: 'Contact',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-        onClick: undefined,
     },
     {
         label: 'Projects',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-        onClick: undefined,
     },
 ];
 
 const Navbar = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     const toggleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -62,54 +57,51 @@ const Navbar = () => {
 
 
     return (
-        <div className='pt-4 px-4 md:px-12 lg:px-24 fixed top-0 left-0 w-screen'>
+        <div className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[10%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}>
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`rounded-4xl hover: z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-12 lg:px-[60px] max-md:px-6 py-4`}
+                className={`relative rounded-xl hover: z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
                 <nav>
                     <a
-                        className="text-2xl font-bold text-accent cursor-pointer hover:text-secondary transition-all duration-300"
-                        onClick={() => { navigate("/") }}>
-                        <img src={Logo} alt="Andro Solutions" width={64} />
+                        className={`${isExpanded ? 'block' : 'max-[450px]:hidden block'} text-2xl font-bold text-accent cursor-pointer hover:text-secondary transition-all duration-300`}
+                        href='/'>
+                        <Image src={Logo} alt="Andro Solutions" priority className='w-8 lg:w-12 hover:rotate-360 hover:scale-110 transition-all ease-out duration-700 delay-70' />
                     </a>
                 </nav>
-                <ul className="max-lg:hidden flex px-4 ml-auto font-semibold font-montserrat space-x-12">
+                {/* <ul className={`max-lg:hidden flex px-4 ml-auto font-semibold font-secondary space-x-12 ${isExpanded ? '' : 'hidden'}`}> */}
+                <ul className={`px-1 lg:px-4 ml-auto font-semibold font-secondary ${isExpanded ? 'hidden' : 'flex space-x-3 text-sm lg:space-x-12'} transition-all duration-150 delay-800 ease-in`}>
                     {navLinks.map((link, idx) => (
                         <li key={link.label}>
                             <nav>
-                                {link.href ? (
-                                    <a
-                                        className={link.className}
-                                        href={link.href}
-                                        onClick={link.onClick}
-                                    >
-                                        {link.label}
-                                    </a>
-                                ) : (
-                                    <a
-                                        className={link.className}
-                                        onClick={link.onClick}
-                                    >
-                                        {link.label}
-                                    </a>
-                                )}
+                                <a
+                                    className={link.className}
+                                    href={link.href}
+                                >
+                                    {link.label}
+                                </a>
                             </nav>
                         </li>
                     ))}
                 </ul>
-                <div className='flex justify-end'>
+                <div className='pl-1 lg:pl-4 flex justify-end'>
                     <a
                         href="#"
-                        className="navbar-burger flex self-center lg:hidden"
+                        className={`navbar-burger flex self-center`}
                         onClick={(e) => {
                             e.preventDefault();
-                            toggleSidebar();
+                            // toggleSidebar();
+                            setIsExpanded(!isExpanded);
                         }}
                     >
-                        <Menu className="text-xl text-primary" />
+                        {isExpanded && (
+                            <Menu className="text-xl text-primary" />
+                        )}
+                        {!isExpanded && (
+                            <X size={18} className='cursor-pointer hover:text-black/80 text-primary' />
+                        )}
                     </a>
                 </div>
             </motion.div >
