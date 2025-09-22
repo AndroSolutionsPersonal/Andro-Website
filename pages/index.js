@@ -20,7 +20,7 @@ export default function Home() {
         <Navbar />
       </section>
       <Hero />
-      <footer className="px-4 pb-4">
+      <footer className="px-2 pb-2 md:px-4 md:pb-4">
         <Footer />
       </footer>
     </main>
