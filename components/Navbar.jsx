@@ -24,13 +24,13 @@ const navLinks = [
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
     },
     {
-        label: 'Contact',
+        label: 'Projects',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
     },
     {
-        label: 'Projects',
+        label: 'Contact',
         href: '/',
         className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
         mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
