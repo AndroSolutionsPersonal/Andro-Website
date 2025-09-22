@@ -38,10 +38,11 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    // const navigate = useNavigate();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isExpanded, setIsExpanded] = useState(true);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const toggleSidebar = () => {
         setIsSidebarOpen((prev) => !prev);
@@ -49,23 +50,45 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            if (window.scrollY > lastScrollY) {
+                setShowNavbar(false); // hide on scroll down
+            } else {
+                setShowNavbar(true); // show on scroll up
+            }
+            setLastScrollY(window.scrollY);
             setIsScrolled(window.scrollY > 50);
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
+        const handleMouseMove = (e) => {
+            if (e.clientY < 80) {
+                setShowNavbar(true); // show if mouse moves near top
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('mousemove', handleMouseMove);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, [lastScrollY]);
     // Keep 'Home' and 'About' visible at all times; collapse/expand the remaining links
     const alwaysLinks = navLinks.slice(0, 2);
     const collapsibleLinks = navLinks.slice(2);
 
     return (
-        <div className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}>
+        <motion.div
+            initial={{ y: 0 }}
+            animate={{ y: showNavbar ? 0 : -120 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[30%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}
+        >
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`relative rounded-xl hover: z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
+                className={`relative rounded-xl z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
                 <nav>
                     <a
@@ -108,7 +131,6 @@ const Navbar = () => {
                         className={`navbar-burger flex self-center`}
                         onClick={(e) => {
                             e.preventDefault();
-                            // toggleSidebar();
                             setIsExpanded(!isExpanded);
                         }}
                     >
@@ -139,7 +161,6 @@ const Navbar = () => {
                                 <a
                                     className={link.mobileClass}
                                     href={link.href}
-
                                     onClick={link.onClick}
                                 >
                                     {link.label}
@@ -149,7 +170,6 @@ const Navbar = () => {
                                     className={link.mobileClass}
                                     onClick={link.onClick}
                                 >
-
                                     {link.label}
                                 </a>
                             )}
@@ -157,7 +177,7 @@ const Navbar = () => {
                     ))}
                 </ul>
             </motion.div>
-        </div>
+        </motion.div>
     );
 }
 
