@@ -21,7 +21,7 @@ export default function Home() {
         <Navbar />
       </section>
       <Hero />
-      <section className="px-2 pb-2 md:px-4 md:pb-4">
+      <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden">
         <ContactSection />
       </section>
       <footer className="px-2 pb-2 md:px-4 md:pb-4">
