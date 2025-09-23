@@ -22,7 +22,7 @@ export default function Home() {
         <Navbar />
       </section>
       <Hero />
-        <ServicesSection />
+      <ServicesSection />
       <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden">
         <ContactSection />
       </section>
