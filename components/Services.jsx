@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PenTool, Code2, Users, Briefcase, Palette } from "lucide-react";
+// import Image from "next/image";
+// import HeaderLogo from "@/assets/logos/Header-Logo.png"
 
 const services = [
     {
@@ -60,6 +62,7 @@ export default function ServicesSection() {
             {/* Left column */}
             <div className="w-full lg:w-1/2 relative">
                 <div className="px-6 py-12 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:pl-[100px] text-left z-10">
+                    {/* <Image src={HeaderLogo} alt="Andro Solutions" className="w-[20vw]" /> */}
                     {/* Heading */}
                     <motion.h2
                         style={{ y: headingY, opacity: headingOpacity }}

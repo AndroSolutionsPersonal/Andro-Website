@@ -26,7 +26,7 @@ const ContactSection = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
-      className="relative bg-primary to-primary/80 text-white py-16 px-6 md:px-12 rounded-3xl w-full mx-auto font-monrserrat shadow-2xl"
+      className="relative bg-primary text-white py-16 px-6 md:px-12 rounded-3xl w-full mx-auto font-monrserrat shadow-2xl z-20"
     >
       {/* Decorative blur glow */}
       <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary/30 rounded-full blur-3xl opacity-70"></div>
@@ -82,9 +82,9 @@ const ContactSection = () => {
         >
           <button
             type="submit"
-            className="w-full bg-black/20 text-secondary outline outline-black/40 font-semibold px-8 py-3 rounded-2xl
-            hover:bg-black/60 hover:text-white hover:shadow-lg hover:shadow-secondary/40 hover:scale-[1.03]
-            transition-all ease-in-out duration-300 cursor-pointer"
+            className="w-full bg-black/5 text-secondary outline outline-black/40 font-semibold px-8 py-3 rounded-2xl
+            hover:bg-white/5 hover:text-white hover:scale-[1.03]
+            transition-all ease-in duration-200 cursor-pointer"
           >
             Send Message
           </button>
