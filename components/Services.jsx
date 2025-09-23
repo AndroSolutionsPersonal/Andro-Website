@@ -45,9 +45,9 @@ export default function ServicesSection() {
         offset: ["start end", "end start"],
     });
 
-    // Left heading: bottom -> center -> fade away after last card
-    const headingY = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], ["100%", "0%", "0%", "50%"]);
-    const headingOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]);
+    // Heading motion (left column)
+    const headingY = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], ["100%", "0%", "0%", "50%"]);
+    const headingOpacity = useTransform(scrollYProgress, [0, 0.15, 0.95, 1], [0, 1, 1, 0]);
 
     return (
         <section ref={containerRef} className="relative flex min-h-[600vh] bg-white">
@@ -55,7 +55,7 @@ export default function ServicesSection() {
             <div className="w-1/2 relative">
                 <motion.div
                     style={{ y: headingY, opacity: headingOpacity }}
-                    className="sticky top-1/3 px-12 text-left z-10"
+                    className="sticky top-1/2 -translate-y-1/2 pl-[100px] text-left z-10"
                 >
                     <h2 className="text-5xl font-gilmer text-primary mb-4">Our Services</h2>
                     <p className="max-w-md text-secondary-foreground font-montserrat">
@@ -65,33 +65,46 @@ export default function ServicesSection() {
             </div>
 
             {/* Right column */}
-            <div className="w-1/2 relative flex justify-start">
-                <div className="relative h-[600vh] w-full">
+            <div className="w-1/2 relative">
+                <div className="relative h-[600vh]">
                     {services.map((service, index) => {
                         const total = services.length;
-                        const start = 0.2 + index / total * 0.6; // start after heading is centered
-                        const mid = start + 0.6 / total / 2;
-                        const end = start + 0.6 / total;
 
-                        // Cards: below -> center -> above
-                        const cardY = useTransform(scrollYProgress, [start, mid, end], ["100%", "0%", "-100%"]);
-                        const cardOpacity = useTransform(scrollYProgress, [start, mid, end], [0, 1, 0]);
+                        // Cards animate only after heading is centered
+                        const sectionStart = 0.2;
+                        const sectionEnd = 0.9;
+                        const slice = (sectionEnd - sectionStart) / total;
+
+                        const start = sectionStart + slice * index;
+                        const holdStart = start + slice * 0.25; // point when it reaches center
+                        const holdEnd = start + slice * 0.75; // hold in center
+                        const end = start + slice;
+
+                        // Y movement: bottom -> center -> hold -> top
+                        const cardY = useTransform(
+                            scrollYProgress,
+                            [start, holdStart, holdEnd, end],
+                            ["100%", "0%", "0%", "-100%"]
+                        );
+
+                        // Fade only when leaving top
+                        const cardOpacity = useTransform(
+                            scrollYProgress,
+                            [start, holdStart, holdEnd, end],
+                            [0, 1, 1, 0]
+                        );
 
                         return (
                             <motion.div
                                 key={index}
                                 style={{ y: cardY, opacity: cardOpacity }}
-                                className="sticky top-1/3"
+                                className="sticky top-1/2 -translate-y-1/2"
                             >
                                 <Card className="w-[420px] mx-auto bg-secondary shadow-lg rounded-2xl">
                                     <CardContent className="p-6 flex items-start space-x-4">
-                                        <div className="p-3 bg-white rounded-xl shadow">
-                                            {service.icon}
-                                        </div>
+                                        <div className="p-3 bg-white rounded-xl shadow">{service.icon}</div>
                                         <div>
-                                            <h3 className="text-xl font-gilmer text-primary">
-                                                {service.title}
-                                            </h3>
+                                            <h3 className="text-xl font-gilmer text-primary">{service.title}</h3>
                                             <p className="text-sm mt-2 text-gray-700 font-montserrat">
                                                 {service.description}
                                             </p>
