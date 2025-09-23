@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ServicesSection from "@/components/Services";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function Home() {
         <Navbar />
       </section>
       <Hero />
+        <ServicesSection />
       <footer className="px-2 pb-2 md:px-4 md:pb-4">
         <Footer />
       </footer>
