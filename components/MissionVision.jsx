@@ -12,7 +12,7 @@ export default function MissionVision() {
     });
 
     // Scale down after initial reveal
-    const imageScale = useTransform(scrollYProgress, [0, 0.3, 0.7], [1, 1, 0.45]);
+    const imageScale = useTransform(scrollYProgress, [0, 0.3, 0.7], [1, 1, 0.4]);
     const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
     // Initial text fade out
     const initialTextOpacity = useTransform(scrollYProgress, [0, 0.25, 0.45], [1, 1, 0]);
@@ -50,7 +50,7 @@ export default function MissionVision() {
                 <motion.div
                     style={{ scale: imageScale, y: imageY }}
                     transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.8 }}
-                    className="relative w-[97vw] h-[90vh] max-w-7xl rounded-[30px] overflow-hidden shadow-2xl"
+                    className="relative w-[96vw] h-[98vh] max-w-8xl rounded-[30px] overflow-hidden shadow-2xl"
                 >
                     <Image src={bgImage} alt="Mission Vision background" fill className="object-cover" />
                     {/* Blue overlay */}
