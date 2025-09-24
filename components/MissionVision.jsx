@@ -96,7 +96,7 @@ export default function MissionVision() {
                 transition={{ ease: "easeOut", duration: 0.8 }}
                 className="sticky top-0 h-screen flex items-center justify-center hidden md:flex"
             >
-                <div className="max-w-7xl w-full px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6">
+                <div className="max-w-7xl w-full px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-20 md:gap-160">
                     {/* Mission (left on desktop) */}
                     <div className="flex flex-col justify-center text-center md:text-left">
                         <h3 className="font-gilmer text-2xl md:text-3xl text-primary">Our Mission</h3>
