@@ -5,37 +5,38 @@ import Logo from '@/public/Logo-2.png'
 import { motion } from "framer-motion";
 
 const navLinks = [
-    {
-        label: 'Home',
-        href: '/',
-        className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
-        mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-    },
-    {
-        label: 'About',
-        href: '/',
-        className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
-        mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-    },
-    {
-        label: 'Services',
-        href: '/',
-        className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
-        mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-    },
-    {
-        label: 'Projects',
-        href: '/',
-        className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
-        mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-    },
-    {
-        label: 'Contact',
-        href: '/',
-        className: 'text-primary hover:text-accent cursor-pointer rounded-sm hover:bg-white/40 hover:px-4 hover:py-2 transition-all duration-200 ease-in-out',
-        mobileClass: 'text-secondary-text hover:text-accent cursor-pointer',
-    },
+  {
+    label: 'Home',
+    href: '/',
+    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+  },
+  {
+    label: 'About',
+    href: '/',
+    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+  },
+  {
+    label: 'Services',
+    href: '/',
+    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+  },
+  {
+    label: 'Projects',
+    href: '/',
+    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+  },
+  {
+    label: 'Contact',
+    href: '/',
+    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+  },
 ];
+
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -88,11 +89,11 @@ const Navbar = () => {
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className={`relative rounded-full z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
+                className={`outline outline-primary relative rounded-full z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
                 <nav>
                     <a
-                        className={`${isExpanded ? 'block' : 'max-[450px]:hidden block'} text-2xl font-bold text-accent cursor-pointer hover:text-secondary transition-all duration-300`}
+                        className={`${isExpanded ? 'block' : 'max-[450px]:hidden block'} text-2xl font-bold text-primary cursor-pointer hover:text-secondary transition-all duration-300`}
                         href='/'>
                         <Image src={Logo} alt="Andro Solutions" priority className='w-8 lg:w-12 hover:rotate-360 hover:scale-110 transition-all ease-out duration-700 delay-70' />
                     </a>
@@ -152,7 +153,7 @@ const Navbar = () => {
                 <ul className="flex flex-col p-4 space-y-8">
                     <li className='flex justify-between items-center'>
                         <a className="text-3xl">
-                            <X className='cursor-pointer hover:text-accent text-secondary-text' onClick={toggleSidebar} />
+                            <X className='cursor-pointer hover:text-primary text-secondary-text' onClick={toggleSidebar} />
                         </a>
                     </li>
                     {navLinks.map((link, idx) => (
