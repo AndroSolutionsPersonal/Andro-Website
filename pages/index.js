@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import ServicesSection from "@/components/Services";
+import MissionVision from "@/components/MissionVision";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function Home() {
       </section>
       <Hero />
       <ServicesSection />
+        <MissionVision />
       <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden">
         <ContactSection />
       </section>
