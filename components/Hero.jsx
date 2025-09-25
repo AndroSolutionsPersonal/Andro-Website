@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function Hero() {
     const panelRef = useRef(null);
@@ -104,12 +106,13 @@ export default function Hero() {
                         enterprise, we help you move faster, work smarter, and grow stronger.
                     </p>
                     <div className="mt-8">
-                        <button
-                            className="px-6 py-3 rounded-md bg-secondary text-[#113559] font-semibold hover:opacity-75 transition"
-                            type="button"
-                        >
-                            Contact Us
-                        </button>
+                        <Link href="/contact">
+                            <Button
+                                className="bg-secondary text-[#113559] font-semibold hover:bg-secondary/60 hover:text-white transition"
+                            >
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </motion.div>
