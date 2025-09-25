@@ -1,7 +1,7 @@
 "use client";
 
 import "@/styles/globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar2";
 import Footer from "@/components/Footer";
 import LenisProvider from "@/components/LenisProvider";
 import { AnimatePresence, motion } from "framer-motion";
