@@ -6,7 +6,7 @@ import MissionVision from "@/components/MissionVision";
 export default function Home() {
     return (
         <>
-            {/*<Hero />*/}
+            <Hero />
             <ServicesSection />
             <MissionVision />
             <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden">
