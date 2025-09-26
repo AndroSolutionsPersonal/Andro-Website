@@ -48,7 +48,7 @@ const descriptionVariants = {
 
 export default function Founders() {
     return (
-        <section className="relative min-h-screen flex flex-col justify-center bg-foreground py-24">
+        <section className="relative min-h-screen flex flex-col justify-center py-24">
             <div className="max-w-6xl mx-auto px-6 md:px-12 w-full">
                 {/* Section heading */}
                 <div className="text-center mb-16">
