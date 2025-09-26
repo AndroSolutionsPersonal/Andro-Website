@@ -2,46 +2,47 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/public/Logo-2.png'
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const navLinks = [
-  {
-    label: 'Home',
-    href: '/',
-    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-  },
-  {
-    label: 'About',
-    href: '/about',
-    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-  },
-  {
-    label: 'Services',
-    href: '/services',
-    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-  },
-  {
-    label: 'Projects',
-    href: '/projects',
-    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-    className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-    mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-  },
+    {
+        label: 'Home',
+        href: '/',
+        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+    },
+    {
+        label: 'About',
+        href: '/about',
+        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+    },
+    {
+        label: 'Services',
+        href: '/services',
+        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+    },
+    {
+        label: 'Projects',
+        href: '/projects',
+        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+    },
+    {
+        label: 'Contact',
+        href: '/contact',
+        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
+        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
+    },
 ];
 
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -80,53 +81,58 @@ const Navbar = () => {
 
     return (
         <motion.div
-            initial={{ y: 0 }}
+            initial={{ y: -120 }}
             animate={{ y: showNavbar ? 0 : -120 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className={`pt-8 ${isExpanded ? 'px-[18%] md:px-[37%]' : 'px-[4%] md:px-[15%]'} fixed top-0 left-0 w-screen z-50 transition-all duration-450 ease-out`}
+            transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1], delay: !isExpanded ? 0 : 0.2 }}
+            className={`pt-8 ${!isExpanded ? 'px-[18%] md:px-[27%] lg:px-[35%]' : 'px-[4%] md:px-[10%] lg:px-[27%]'} fixed top-0 w-screen left-1/2 -translate-x-1/2 z-50`}
         >
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 className={`outline outline-primary relative rounded-full z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
-                <nav>
-                    <a
-                        className={`${isExpanded ? 'block' : 'max-[450px]:hidden block'} text-2xl font-bold text-primary cursor-pointer hover:text-secondary transition-all duration-300`}
-                        href='/'>
-                        <Image src={Logo} alt="Andro Solutions" priority className='w-8 lg:w-12 hover:rotate-360 hover:scale-110 transition-all ease-out duration-700 delay-70' />
-                    </a>
-                </nav>
-                {/* top-level links: show Home & About always; show remaining links only when menu is expanded */}
-                <ul className={`px-1 lg:px-4 font-semibold font-secondary flex items-center justify-center space-x-3 text-sm lg:space-x-12 transition-all duration-150 delay-800 ease-in`}>
-                    {alwaysLinks.map((link) => (
-                        <li key={link.label}>
-                            <nav>
-                                <a
-                                    className={link.className}
-                                    href={link.href}
-                                >
-                                    {link.label}
-                                </a>
-                            </nav>
-                        </li>
-                    ))}
+                <Link
+                    href="/public"
+                    className={`${isExpanded ? 'text-right max-[420px]:hidden' : 'flex'}  items-center justify-center w-[35px] h-[35px] min-w-[35px] shrink-0 cursor-pointer`}
+                >
+                    <Image
+                        src={Logo}
+                        alt="Andro Solutions"
+                        width={60}
+                        height={60}
+                        priority
+                        className={`object-contain transition-transform duration-700 ease-out hover:rotate-[360deg] hover:scale-110`}
+                    />
+                </Link>
 
-                    {!isExpanded && collapsibleLinks.map((link) => (
-                        <li key={link.label}>
-                            <nav>
-                                <a
-                                    className={link.className}
-                                    href={link.href}
+                {/* top-level links: show Home & About always; show remaining links only when menu is expanded */}
+                <nav>
+                    <motion.ul
+                        initial={{  }}
+                        animate={{ transition: { delay: 0.1 } }}
+                        transition={{ duration: 0.1 }}
+                        className={'flex justify-center gap-2 md:gap-6'}>
+                        <li><Link href={""} className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Home</Link></li>
+                        <li><Link href={""} className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>About</Link></li>
+                        <AnimatePresence mode="wait">
+                            {isExpanded && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1, transition: { duration: 0.2, ease: "easeInOut", delay: 0.2 } }}
+                                    exit={{ opacity: 0 }}
+                                    // transition={{ duration: 0.4, ease: "easeInOut", delay: 0.3 }}
+                                    className="flex justify-center gap-2 md:gap-6"
                                 >
-                                    {link.label}
-                                </a>
-                            </nav>
-                        </li>
-                    ))}
-                </ul>
-                <div className='pl-1 lg:pl-4 flex justify-end'>
+                                    <li><Link href="" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Service</Link></li>
+                                    <li><Link href="" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Projects</Link></li>
+                                    <li><Link href="" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Contact</Link></li>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </motion.ul>
+                </nav>
+                <div className='-ml-4 md:-ml-1 flex justify-start  '>
                     <a
                         href="#"
                         className={`navbar-burger flex self-center`}
@@ -135,48 +141,14 @@ const Navbar = () => {
                             setIsExpanded(!isExpanded);
                         }}
                     >
-                        {isExpanded && (
+                        {!isExpanded && (
                             <Menu className="text-xl text-primary" />
                         )}
-                        {!isExpanded && (
-                            <X size={18} className='cursor-pointer hover:text-black/80 text-primary' />
+                        {isExpanded && (
+                            <X className=' text-xl cursor-pointer hover:text-black/80 text-primary' />
                         )}
                     </a>
                 </div>
-            </motion.div >
-            <motion.div
-                initial={{ x: "100%" }}
-                animate={{ x: isSidebarOpen ? 0 : "100%" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className={`z-30 fixed top-0 right-0 h-full bg-tertiary bg-secondary w-3/5 max-sm:w-full transform ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}
-            >
-                <ul className="flex flex-col p-4 space-y-8">
-                    <li className='flex justify-between items-center'>
-                        <a className="text-3xl">
-                            <X className='cursor-pointer hover:text-primary text-secondary-text' onClick={toggleSidebar} />
-                        </a>
-                    </li>
-                    {navLinks.map((link, idx) => (
-                        <li key={link.label}>
-                            {link.href ? (
-                                <a
-                                    className={link.mobileClass}
-                                    href={link.href}
-                                    onClick={link.onClick}
-                                >
-                                    {link.label}
-                                </a>
-                            ) : (
-                                <a
-                                    className={link.mobileClass}
-                                    onClick={link.onClick}
-                                >
-                                    {link.label}
-                                </a>
-                            )}
-                        </li>
-                    ))}
-                </ul>
             </motion.div>
         </motion.div>
     );
