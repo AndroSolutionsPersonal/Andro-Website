@@ -5,14 +5,13 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import img from "@/assets/AboutHero2.png"
+import img from "@/assets/AboutH.png";
+
 export default function Hero() {
     const panelRef = useRef(null);
     const controls = useAnimation();
 
     useEffect(() => {
-        // Subtle settle animation: small shrink, padding and rounded corners.
-        // Reduced shrink (0.985) for a very gentle effect and smoother easing.
         controls.start({
             scale: 0.985,
             paddingTop: "36px",
@@ -26,10 +25,9 @@ export default function Hero() {
     }, [controls]);
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center">
+        <section className="relative min-h-screen flex items-center">
             <motion.div
                 ref={panelRef}
-                // start full-bleed
                 initial={{
                     scale: 1,
                     paddingTop: "0px",
@@ -45,94 +43,76 @@ export default function Hero() {
                     height: "100vh",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
+                    justifyContent: "flex-start", // 👈 align left
                     overflow: "hidden",
                     boxSizing: "border-box",
                 }}
-                className="relative flex items-center justify-center"
+                className="relative flex items-center"
             >
-                {/* Full-bleed branded background */}
-                <div className="absolute inset-0 -z-10" style={{ backgroundColor: "#113559" }} />
+                {/* Background Image with blur placeholder */}
+                <div className="absolute inset-0 -z-10">
+                    <Image
+                        src={img}
+                        alt="Andro Solutions Background"
+                        fill
+                        priority
+                        placeholder="blur"
+                        className="object-cover"
+                    />
+                    {/* Overlay tint for readability */}
+                    <div className="absolute inset-0 bg-[#113559]/70" />
+                </div>
 
-                {/* Content container (constrains text width for readability) */}
+                {/* Left-side text only */}
                 <motion.div
-                    className="relative z-10 w-full max-w-7xl flex flex-col md:flex-row items-center gap-8"
+                    className="relative z-10 max-w-2xl px-6 md:px-12 text-left"
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45, duration: 0.45, ease: "easeOut" }}
                 >
-                    {/* Left side - text */}
-                    <div className="flex-1 text-white px-2 md:px-0">
-                        <h1 className="text-4xl md:text-6xl font-gilmer font-bold mb-4 leading-tight">
-                            Andro Solutions
-                        </h1>
+                    <h1 className="text-4xl md:text-6xl font-gilmer font-bold mb-4 leading-tight text-white">
+                        Andro Solutions
+                    </h1>
 
-                        <p className="text-base md:text-lg font-montserrat leading-relaxed mb-4 text-[#B0BCC8]">
-                            At Andro Solutions, we empower businesses through modern technology and
-                            strategic thinking. Our mission is to bridge complex challenges and
-                            simple, scalable solutions—delivering measurable impact.
-                        </p>
+                    <p className="text-base md:text-2xl font-montserrat leading-relaxed mb-4 text-[#B0BCC8]/90">
+                        At Andro Solutions, we empower businesses through modern technology
+                        and strategic thinking. Our mission is to bridge complex challenges
+                        and simple, scalable solutions—delivering measurable impact.
+                    </p>
 
-                        <p className="text-base md:text-lg font-montserrat leading-relaxed mb-6">
-                            From product engineering and digital transformation to consulting and
-                            market insights, we partner with organizations to build the future.
-                        </p>
+                    <p className="text-base md:text-2xl font-montserrat leading-relaxed mb-6 text-white">
+                        From product engineering and digital transformation to consulting
+                        and market insights, we partner with organizations to build the
+                        future.
+                    </p>
 
-                        <div className="flex flex-wrap gap-3">
-                            <Link href="/services" passHref>
-                                <Button
-                                    as="a"
-                                    className={
-                                        "bg-white text-[#113559] px-5 py-2.5 rounded-full font-semibold shadow-sm " +
-                                        "hover:shadow-md hover:bg-white/80 transform hover:-translate-y-0.5 transition-all duration-200 ease-out " +
-                                        "focus:outline-none focus:ring-4 focus:ring-white/20"
-                                    }
-                                    aria-label="Our Services"
-                                >
-                                    Our Services
-                                </Button>
-                            </Link>
+                    <div className="flex flex-wrap gap-3">
+                        <Link href="/services" passHref>
+                            <Button
+                                as="a"
+                                className="bg-white text-[#113559] px-5 py-2.5 rounded-full font-semibold shadow-sm hover:shadow-md hover:bg-white/80 transform hover:-translate-y-0.5 transition-all duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-white/20"
+                            >
+                                Our Services
+                            </Button>
+                        </Link>
 
-                            <Link href="/projects" passHref>
-                                <Button
-                                    as="a"
-                                    className={
-                                        "bg-[#B0BCC8] text-[#113559] px-5 py-2.5 rounded-full font-semibold shadow-sm " +
-                                        "hover:bg-[#98a3ad] hover:text-white transform hover:-translate-y-0.5 transition-all duration-200 ease-out " +
-                                        "focus:outline-none focus:ring-4 focus:ring-white/20"
-                                    }
-                                    aria-label="Our Projects"
-                                >
-                                    Our Projects
-                                </Button>
-                            </Link>
+                        <Link href="/projects" passHref>
+                            <Button
+                                as="a"
+                                className="bg-[#B0BCC8] text-[#113559] px-5 py-2.5 rounded-full font-semibold shadow-sm hover:bg-[#98a3ad] hover:text-white transform hover:-translate-y-0.5 transition-all duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-white/20"
+                            >
+                                Our Projects
+                            </Button>
+                        </Link>
 
-                            <Link href="/contact" passHref>
-                                <Button
-                                    as="a"
-                                    className={
-                                        "bg-transparent border border-white/20 text-white px-5 py-2.5 rounded-full font-semibold " +
-                                        "hover:bg-white/10 transform hover:-translate-y-0.5 transition-all duration-200 ease-out " +
-                                        "focus:outline-none focus:ring-4 focus:ring-white/20"
-                                    }
-                                    aria-label="Contact Us"
-                                >
-                                    Contact Us
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Right side - image */}
-                    <div className="flex-1 flex justify-center px-2 md:px-0">
-                        <Image
-                            src={img}
-                            alt="Andro Solutions Illustration"
-                            width={560}
-                            height={560}
-                            className="rounded-2xl object-contain"
-                            priority
-                        />
+                        <Link href="/contact" passHref>
+                            <Button
+                                as="a"
+                                className="bg-transparent border border-white/20 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-white/10 transform hover:-translate-y-0.5 transition-all duration-200 ease-out focus:outline-none focus:ring-4 focus:ring-white/20"
+                            >
+                                Contact Us
+                            </Button>
+                        </Link>
                     </div>
                 </motion.div>
             </motion.div>
