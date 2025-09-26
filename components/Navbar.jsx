@@ -101,11 +101,11 @@ const Navbar = () => {
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className={`outline outline-primary relative rounded-full z-30 w-full flex items-center justify-between transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
+                className={`outline outline-primary relative rounded-full z-30 w-full flex items-center justify-around transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
             >
                 <Link
                     href="/"
-                    className={`${isExpanded ? 'text-right max-[420px]:hidden' : 'flex'}  items-center justify-center w-[35px] h-[35px] min-w-[35px] shrink-0 cursor-pointer`}
+                    className={`${isExpanded ? 'text-right max-[420px]:hidden' : 'flex'}  items-center justify-center w-[35px] h-[35px] cursor-pointer`}
                 >
                     <Image
                         src={Logo}
@@ -123,7 +123,7 @@ const Navbar = () => {
                         initial={{  }}
                         animate={{ transition: { delay: 0.1 } }}
                         transition={{ duration: 0.1 }}
-                        className={'flex justify-center gap-2 md:gap-6'}>
+                        className={'flex justify-center items-center gap-2 md:gap-6'}>
                         <li><Link href="/" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Home</Link></li>
                         <li><Link href="/about" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>About</Link></li>
                         <AnimatePresence mode="wait">
@@ -143,7 +143,7 @@ const Navbar = () => {
                         </AnimatePresence>
                     </motion.ul>
                 </nav>
-                <div className='-ml-4 md:-ml-1 flex justify-start  '>
+                <div className={`${isExpanded ? 'ml-2 md:ml-1' : ''} flex justify-start`}>
                     <a
                         href="#"
                         className={`navbar-burger flex self-center`}

@@ -7,6 +7,7 @@ import LenisProvider from "@/components/LenisProvider";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }) {
     const router = useRouter();
@@ -66,6 +67,9 @@ export default function App({ Component, pageProps }) {
                 </AnimatePresence>
 
                 <Footer />
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false} />
             </main>
         </LenisProvider>
     );
