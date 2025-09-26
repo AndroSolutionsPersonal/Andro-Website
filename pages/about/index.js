@@ -3,12 +3,13 @@
 "use client";
 
 import Hero from "@/components/AboutHero";
-
+import Founders from "@/components/Founders";
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
             <Hero />
+            <Founders />
 
             {/* Additional About Content */}
             <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 text-[#113559]">
