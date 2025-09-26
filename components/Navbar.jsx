@@ -6,37 +6,48 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const navLinks = [
-    {
-        label: 'Home',
-        href: '/',
-        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-    },
-    {
-        label: 'About',
-        href: '/about',
-        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-    },
-    {
-        label: 'Services',
-        href: '/services',
-        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-    },
-    {
-        label: 'Projects',
-        href: '/projects',
-        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-    },
-    {
-        label: 'Contact',
-        href: '/contact',
-        className: 'relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full',
-        mobileClass: 'text-secondary-text hover:text-primary cursor-pointer transition-colors duration-300',
-    },
+  {
+    label: "Home",
+    href: "/",
+    className:
+      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
+    mobileClass:
+      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
+  },
+  {
+    label: "About",
+    href: "/about",
+    className:
+      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
+    mobileClass:
+      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
+  },
+  {
+    label: "Services",
+    href: "/services",
+    className:
+      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
+    mobileClass:
+      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
+  },
+  {
+    label: "Projects",
+    href: "/projects",
+    className:
+      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
+    mobileClass:
+      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    className:
+      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
+    mobileClass:
+      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
+  },
 ];
+
 
 
 const Navbar = () => {
