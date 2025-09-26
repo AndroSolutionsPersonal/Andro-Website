@@ -3,12 +3,15 @@
 "use client";
 
 import Hero from "@/components/AboutHero";
+import whyUs from "@/components/WhyUs";
 import Founders from "@/components/Founders";
+import WhyUs from "@/components/WhyUs2";
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white">
             {/* Hero Section */}
             <Hero />
+            <WhyUs />
             <Founders />
 
             {/* Additional About Content */}
