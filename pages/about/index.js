@@ -8,7 +8,7 @@ import Founders from "@/components/Founders";
 import WhyUs from "@/components/WhyUs2";
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen">
             {/* Hero Section */}
             <Hero />
             <WhyUs />
