@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-
+import img from "@/assets/AboutHero2.png"
 export default function Hero() {
     const panelRef = useRef(null);
     const controls = useAnimation();
@@ -126,7 +126,7 @@ export default function Hero() {
                     {/* Right side - image */}
                     <div className="flex-1 flex justify-center px-2 md:px-0">
                         <Image
-                            src="/images/andro-hero.png"
+                            src={img}
                             alt="Andro Solutions Illustration"
                             width={560}
                             height={560}
