@@ -11,7 +11,7 @@ import AboutHero from "@/assets/ProjectsHeader.jpg"
 import AndroWebsite from "@/assets/projects/AndroWebsite.png"
 import SpawnPoint from "@/assets/projects/SpawnPoint.png"
 import StreamSynx from "@/assets/projects/StreamSynx.png"
-
+import Head from "next/head";
 const projects = [
   {
     id: "#001",
