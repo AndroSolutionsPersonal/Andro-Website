@@ -6,7 +6,7 @@ import Head from "next/head";
 export default function Home() {
     return (
         <>
-            <head>
+            <Head>
                 <title>Andro Solutions | Driving Innovation in Technology & Business</title>
                 <meta name="description"
                       content="Andro Solutions delivers innovative technology, software, and business solutions to help organizations grow and succeed. Explore our services, projects, and expertise."/>
@@ -18,7 +18,7 @@ export default function Home() {
                 <meta property="og:image" content="/og-images/home.jpg"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content=""/>
-            </head>
+            </Head>
 
             <Hero/>
             <ServicesSection/>
