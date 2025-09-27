@@ -94,97 +94,112 @@ export default function ProjectsPage() {
   }
 
   return (
-    <article id="projects" className="w-[100vw] p-2 md:p-4">
-      <ProjectsHeader />
+      <article id="projects" className="w-[100vw] p-2 md:p-4">
+        <Head>
+          <title>Our Projects | Andro Solutions</title>
+          <meta name="description"
+                content="See how Andro Solutions has helped businesses transform with impactful technology and innovation projects."/>
+          <meta name="keywords"
+                content="Andro Solutions projects, technology case studies, innovation portfolio, IT solutions"/>
+          <meta property="og:title" content="Our Projects | Andro Solutions"/>
+          <meta property="og:description"
+                content="Explore real-world projects where we’ve delivered innovation and measurable results."/>
+          <meta property="og:image" content="/og-images/projects.jpg"/>
+          <meta property="og:type" content="website"/>
+          <meta property="og:url" content="https://yourdomain.com/projects"/>
+        </Head>
 
-      <section className="project-group-container h-[500vh] relative">
-        <div className="sticky top-0 overflow-hidden h-screen">
-          <ul className="project-group flex">
-            {projects.map((project) => (
-              <li
-                key={project.id}
-                className="project-container flex flex-col items-center justify-center w-screen h-screen flex-shrink-0 px-4 md:px-8 opacity-0"
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full md:w-[45vw] h-[40vh] md:h-[25vw] object-contain rounded-2xl shadow-lg"
-                />
-                <aside className="mt-4 flex flex-col items-center bg-secondary/10 py-6 px-4 md:px-8 rounded-2xl w-full md:w-[45vw] outline-1 outline-secondary/40">
-                  <h3 className="text-4xl font-bold">{project.id}</h3>
-                  <h4 className="mt-2 text-2xl font-semibold">
-                    {project.title}
-                  </h4>
-                  <p className="mt-4 max-w-md text-center text-secondary">
-                    {project.description}
-                  </p>
+        <ProjectsHeader/>
 
-                  {/* Action Buttons */}
-                  <div className="mt-6 flex gap-4">
-                    <button
-                      onClick={() => setActiveProject(project)}
-                      className="flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-lg hover:scale-105 transition"
-                    >
-                      <Info size={18} />
-                    </button>
-                    <button
-                      onClick={() => handleLinkClick(project.github, "GitHub")}
-                      className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition"
-                    >
-                      <Github size={18} /> <span>GitHub</span>
-                    </button>
-                    <button
-                      onClick={() => handleLinkClick(project.liveDemo, "Live Demo")}
-                      className="flex items-center gap-2 bg-transparent text-primary hover:outline-1 outline-primary/30 px-4 py-2 rounded-lg hover:scale-105 transition"
-                    >
-                      <ExternalLink size={18} /> <span>Live Demo</span>
-                    </button>
-                  </div>
-                </aside>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+        <section className="project-group-container h-[500vh] relative">
+          <div className="sticky top-0 overflow-hidden h-screen">
+            <ul className="project-group flex">
+              {projects.map((project) => (
+                  <li
+                      key={project.id}
+                      className="project-container flex flex-col items-center justify-center w-screen h-screen flex-shrink-0 px-4 md:px-8 opacity-0"
+                  >
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full md:w-[45vw] h-[40vh] md:h-[25vw] object-contain rounded-2xl shadow-lg"
+                    />
+                    <aside
+                        className="mt-4 flex flex-col items-center bg-secondary/10 py-6 px-4 md:px-8 rounded-2xl w-full md:w-[45vw] outline-1 outline-secondary/40">
+                      <h3 className="text-4xl font-bold">{project.id}</h3>
+                      <h4 className="mt-2 text-2xl font-semibold">
+                        {project.title}
+                      </h4>
+                      <p className="mt-4 max-w-md text-center text-secondary">
+                        {project.description}
+                      </p>
 
-      {/* Modal */}
-      {activeProject && (
-        <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-          onClick={() => setActiveProject(null)}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-2xl max-w-3xl w-[90%] p-6 relative animate-in fade-in slide-in-from-bottom-8 duration-300"
-          >
-            <button
-              className="absolute top-3 right-3 text-gray-600 hover:text-black"
-              onClick={() => setActiveProject(null)}
+                      {/* Action Buttons */}
+                      <div className="mt-6 flex gap-4">
+                        <button
+                            onClick={() => setActiveProject(project)}
+                            className="flex items-center gap-2 bg-secondary text-primary px-4 py-2 rounded-lg hover:scale-105 transition"
+                        >
+                          <Info size={18}/>
+                        </button>
+                        <button
+                            onClick={() => handleLinkClick(project.github, "GitHub")}
+                            className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:scale-105 transition"
+                        >
+                          <Github size={18}/> <span>GitHub</span>
+                        </button>
+                        <button
+                            onClick={() => handleLinkClick(project.liveDemo, "Live Demo")}
+                            className="flex items-center gap-2 bg-transparent text-primary hover:outline-1 outline-primary/30 px-4 py-2 rounded-lg hover:scale-105 transition"
+                        >
+                          <ExternalLink size={18}/> <span>Live Demo</span>
+                        </button>
+                      </div>
+                    </aside>
+                  </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Modal */}
+        {activeProject && (
+            <div
+                className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+                onClick={() => setActiveProject(null)}
             >
-              ✕
-            </button>
-
-            <Image
-              src={activeProject.image}
-              alt={activeProject.title}
-              className="w-full h-[200px] object-contain rounded-lg mb-4"
-            />
-
-            <h2 className="text-2xl font-bold mb-2">{activeProject.title}</h2>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {activeProject.technologies.map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+              <div
+                  onClick={(e) => e.stopPropagation()}
+                  className="bg-white rounded-2xl max-w-3xl w-[90%] p-6 relative animate-in fade-in slide-in-from-bottom-8 duration-300"
+              >
+                <button
+                    className="absolute top-3 right-3 text-gray-600 hover:text-black"
+                    onClick={() => setActiveProject(null)}
                 >
+                  ✕
+                </button>
+
+                <Image
+                    src={activeProject.image}
+                    alt={activeProject.title}
+                    className="w-full h-[200px] object-contain rounded-lg mb-4"
+                />
+
+                <h2 className="text-2xl font-bold mb-2">{activeProject.title}</h2>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {activeProject.technologies.map((tech, idx) => (
+                      <span
+                          key={idx}
+                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                      >
                   {tech}
                 </span>
-              ))}
+                  ))}
+                </div>
+                <p className="text-gray-700">{activeProject.details}</p>
+              </div>
             </div>
-            <p className="text-gray-700">{activeProject.details}</p>
-          </div>
-        </div>
-      )}
-    </article>
+        )}
+      </article>
   )
 }
