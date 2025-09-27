@@ -135,7 +135,7 @@ const Navbar = () => {
                                     // transition={{ duration: 0.4, ease: "easeInOut", delay: 0.3 }}
                                     className="flex justify-center gap-2 md:gap-6"
                                 >
-                                    <li><Link href="/service" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Service</Link></li>
+                                    <li><Link href="/services" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Service</Link></li>
                                     <li><Link href="/projects" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Projects</Link></li>
                                     <li><Link href="/contact" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Contact</Link></li>
                                 </motion.div>
