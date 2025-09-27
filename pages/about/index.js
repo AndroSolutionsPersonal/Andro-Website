@@ -12,9 +12,23 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen">
             {/* Hero Section */}
-            <Hero />
-            <WhyUs />
-            <Founders />
+            <Head>
+                <title>About Us | Andro Solutions</title>
+                <meta name="description"
+                      content="Learn more about Andro Solutions, our mission, vision, and the team driving technology and business innovation."/>
+                <meta name="keywords"
+                      content="About Andro Solutions, technology company, business innovation team, IT experts"/>
+                <meta property="og:title" content="About Us | Andro Solutions"/>
+                <meta property="og:description"
+                      content="Discover our story, values, and the people behind Andro Solutions."/>
+                <meta property="og:image" content="/og-images/about.jpg"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://yourdomain.com/about"/>
+            </Head>
+
+            <Hero/>
+            <WhyUs/>
+            <Founders/>
 
             {/* Additional About Content */}
             <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 text-[#113559]">
