@@ -85,7 +85,7 @@ export default function ServicesSection() {
                         <Card
                             key={index}
                             className={`w-full bg-secondary shadow-lg rounded-2xl ${
-                                index > 0 ? "-mt-8" : ""
+                                index > 0 ? "mt-8" : ""
                             }`}
                         >
                             <CardContent className="p-6 flex items-start space-x-4">
