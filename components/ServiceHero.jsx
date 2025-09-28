@@ -48,7 +48,7 @@ export default function ServicesHero() {
     useEffect(() => {
         controls.start({
             scale: 0.985,
-            padding: "36px",
+            padding: "40px",
             borderRadius: "24px",
             boxShadow: "0 18px 50px rgba(8,18,25,0.25)",
             transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.28 },
@@ -75,7 +75,7 @@ export default function ServicesHero() {
                     overflow: "hidden",
                     boxSizing: "border-box",
                 }}
-                className="relative flex"
+                className="relative flex max-w-full"
             >
                 {/* Background Image slightly blurred */}
                 <div className="absolute inset-0 -z-10">
