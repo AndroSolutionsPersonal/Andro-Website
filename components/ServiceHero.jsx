@@ -85,7 +85,7 @@ export default function ServicesHero() {
                         fill
                         priority
                         placeholder="blur"
-                        className="object-cover blur-sm"
+                        className="object-cover blur-lg"
                     />
                     <div className="absolute inset-0 bg-[#113559]/70" />
                 </div>
