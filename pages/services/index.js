@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import ServiceHero from "@/components/ServiceHero";
 export default function Services() {
     return (
         <>
@@ -23,15 +23,10 @@ export default function Services() {
                 <meta property="og:url" content="https://yourdomain.com/services" />
             </Head>
 
-            <main className="min-h-screen flex items-center justify-center bg-background text-foreground">
-                <div className="max-w-2xl text-center space-y-4">
-                    <h1 className="text-4xl font-bold">Our Services</h1>
-                    <p className="text-lg text-gray-600">
-                        This is a placeholder for the Services page. Content about software
-                        development, design, and consulting will go here.
-                    </p>
-                </div>
-            </main>
+            <>
+                <ServiceHero />
+
+            </>
         </>
     );
 }
