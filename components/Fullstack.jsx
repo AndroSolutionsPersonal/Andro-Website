@@ -56,24 +56,28 @@ export default function FullstackSection() {
                     </p>
                 </div>
 
-                {/* Right image */}
-                <div className="relative">
-                    <div className="absolute inset-0 rounded-2xl border-4 border-secondary translate-x-3 translate-y-3 -z-10" />
-                    <Image
-                        src={Fullstack}
-                        alt="Fullstack Development"
-                        className="rounded-2xl object-cover h-[400px] w-full"
-                        priority
-                    />
+                {/* Right image with offset box */}
+                <div className="relative w-full h-[400px] flex items-center justify-center">
+                    {/* Offset box (slightly bigger, behind) */}
+                    <div className="absolute w-[95%] h-[95%] rounded-2xl bg-[#B0BCC8] translate-x-8 translate-y-8" />
+
+                    {/* Main image */}
+                    <div className="relative w-[95%] h-[95%] rounded-2xl overflow-hidden z-10">
+                        <Image
+                            src={Fullstack}
+                            alt="Fullstack Development"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
                 </div>
+
+
             </div>
 
             {/* Tech Carousel */}
             <div className="border-t border-white/20 mt-16 pt-10 overflow-hidden">
-                {/*<h3 className="text-center text-primary text-2xl font-semibold mb-8">*/}
-                {/*    Tools & Technologies We Use*/}
-                {/*</h3>*/}
-
                 <div className="relative w-full overflow-hidden">
                     <div className="flex gap-16 animate-marquee whitespace-nowrap">
                         {techIcons.map(({ Icon, name }, idx) => (
@@ -101,18 +105,18 @@ export default function FullstackSection() {
 
             {/* Custom animation */}
             <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
-        }
-      `}</style>
+                @keyframes marquee {
+                    0% {
+                        transform: translateX(0%);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+                .animate-marquee {
+                    animation: marquee 20s linear infinite;
+                }
+            `}</style>
         </section>
     );
 }
