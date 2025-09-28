@@ -6,32 +6,36 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import img from "@/assets/AboutH.png"; // background image
-
+import UIUX from"@/assets/services/UIUX.png"
+import Fullstack from"@/assets/services/Fullstack.png"
+import SMM from"@/assets/services/SMM.png"
+import SC from"@/assets/services/SC.png"
+import GD from"@/assets/services/GD.png"
 const services = [
     {
         slug: "uiux",
         title: "UI/UX Design",
-        image: "/services/uiux.jpg",
+        image: UIUX,
     },
     {
         slug: "fullstack",
         title: "Full Stack Development",
-        image: "/services/fullstack.jpg",
+        image: Fullstack,
     },
     {
         slug: "smm",
         title: "Social Media Management",
-        image: "/services/smm.jpg",
+        image: SMM,
     },
     {
         slug: "consultancy",
         title: "Software Consultancy",
-        image: "/services/consultancy.jpg",
+        image: SC,
     },
     {
         slug: "graphic",
         title: "Graphic Design",
-        image: "/services/graphic.jpg",
+        image: GD,
     },
 ];
 
