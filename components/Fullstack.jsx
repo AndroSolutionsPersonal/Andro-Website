@@ -36,7 +36,7 @@ export default function FullstackSection() {
     ];
 
     return (
-        <section className="bg-foreground text-primary py-20 px-6 md:px-16 min-h-screen">
+        <section className="bg-foreground text-primary py-20 px-6 md:px-16 min-h-screen" id="fullstack">
             {/* Main content grid */}
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 {/* Left */}

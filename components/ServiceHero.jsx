@@ -18,7 +18,7 @@ const services = [
         image: UIUX,
     },
     {
-        slug: "fullstack",
+        slug: "#fullstack",
         title: "Full Stack Development",
         image: Fullstack,
     },
@@ -130,6 +130,7 @@ export default function ServicesHero() {
                                 src={service.image}
                                 alt={service.title}
                                 fill
+                                placeholder="blur"
                                 className="object-cover"
                             />
 
