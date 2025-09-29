@@ -28,7 +28,7 @@ const tools = [
 
 export default function UIUXSection() {
     return (
-        <section className="relative w-full min-h-screen flex items-center bg-[#113559] text-white">
+        <section className="relative w-full min-h-screen flex items-center bg-[#113559] text-white" id="UIUX">
             <div className="container mx-auto flex flex-col lg:flex-row items-center px-6 lg:px-12">
                 {/* Left column - Transparent UI/UX image */}
                 <div className="w-full lg:w-1/2 flex justify-center items-center mb-12 lg:mb-0">

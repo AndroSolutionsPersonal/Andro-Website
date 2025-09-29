@@ -13,7 +13,7 @@ import SC from"@/assets/services/SC.png"
 import GD from"@/assets/services/GD.png"
 const services = [
     {
-        slug: "uiux",
+        slug: "#UIUX",
         title: "UI/UX Design",
         image: UIUX,
     },
