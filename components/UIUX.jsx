@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Figma logo from react-icons
+import UIUX from "@/assets/services/UIUXback2.png";
+
 import { SiFigma, SiAdobephotoshop, SiAdobexd, SiSketch } from "react-icons/si";
 
 const tools = [
     {
         name: "Figma",
-        icon: <SiFigma className="w-12 h-12 text-[#F24E1E]" />, // Figma brand color
+        icon: <SiFigma className="w-12 h-12 text-[#F24E1E]" />,
     },
     {
         name: "Adobe XD",
@@ -29,18 +30,21 @@ export default function UIUXSection() {
     return (
         <section className="relative w-full min-h-screen flex items-center bg-[#113559] text-white">
             <div className="container mx-auto flex flex-col lg:flex-row items-center px-6 lg:px-12">
-                {/* Left column - Figma logo */}
-                <div className="w-full lg:w-1/2 flex justify-center mb-12 lg:mb-0">
+                {/* Left column - Transparent UI/UX image */}
+                <div className="w-full lg:w-1/2 flex justify-center items-center mb-12 lg:mb-0">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="relative flex flex-col items-center"
+                        className="relative w-full flex justify-center"
                     >
-                        <div className="w-[200px] h-[200px] bg-white rounded-3xl shadow-2xl flex items-center justify-center">
-                            <SiFigma className="w-24 h-24 text-[#F24E1E]" />
-                        </div>
+                        <Image
+                            src={UIUX}
+                            alt="UI/UX Illustration"
+                            className="object-contain max-h-[400px] lg:max-h-[800px] w-auto"
+                            priority
+                        />
                     </motion.div>
                 </div>
 
