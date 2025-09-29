@@ -42,23 +42,22 @@ export default function Navbar() {
     const collapsedWidth = "280px";
     const collapsedHeight = 60;
 
-    // Expanded width & height adjust per device
-    const expandedWidth = "60vw"; // desktop
-    const expandedHeight = 320; // desktop
-    const expandedHeightMobile = 480; // taller for phones
+    const expandedWidth = "60vw"; // desktop width
+    const expandedHeight = 320; // desktop height
+    const expandedHeightMobile = 480; // phone height
 
     return (
         <motion.nav
             initial={{ y: -120 }}
             animate={{ y: isVisible ? 0 : -120 }}
-            transition={{ duration: 0.28, ease: "easeInOut" }}
+            transition={{ duration: 0.28, ease: "easeOut" }}
             className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] w-full max-w-[95%] md:max-w-none"
         >
             <motion.div
                 animate={{
                     width: expanded
                         ? window.innerWidth < 768
-                            ? "100%" // phones = full width
+                            ? "100%" // phone = full width
                             : expandedWidth
                         : collapsedWidth,
                     height: expanded
@@ -76,54 +75,59 @@ export default function Navbar() {
             >
                 {/* Top Row */}
                 <div
-                    className={`flex items-center px-4 py-3 ${
-                        expanded ? "justify-between" : "justify-evenly"
+                    className={`flex items-center px-4 py-3 mb-6 ${
+                        expanded
+                            ? "justify-between"
+                            : "justify-evenly"
                     }`}
                 >
-                    <div className="flex items-center gap-5 flex-wrap">
-                        <Link href="/" className="flex items-center gap-2 px-2">
-                            <Image
-                                src={Logo}
-                                alt="Logo"
-                                width={36}
-                                height={36}
-                                className="object-contain"
-                            />
-                        </Link>
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center gap-2 px-2">
+                        <Image
+                            src={Logo}
+                            alt="Logo"
+                            width={36}
+                            height={36}
+                            className="object-contain"
+                        />
+                    </Link>
 
-                        {/* Collapsed view */}
-                        {!expanded ? (
-                            <ul className="flex items-center gap-6 text-sm font-medium">
-                                <li>
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/about">About</Link>
-                                </li>
-                            </ul>
-                        ) : (
-                            // Expanded view
-                            <ul className="flex items-center gap-4 text-sm font-medium flex-wrap">
-                                <li>
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/services">Services</Link>
-                                </li>
-                                <li>
-                                    <Link href="/about">About</Link>
-                                </li>
-                                <li>
-                                    <Link href="/projects">Projects</Link>
-                                </li>
-                                <li className="hidden md:block">
-                                    {/* Contact only for desktop expanded */}
-                                    <Link href="/contact">Contact</Link>
-                                </li>
-                            </ul>
-                        )}
-                    </div>
+                    {/* Collapsed view */}
+                    {!expanded ? (
+                        <ul className="flex items-center gap-6 text-sm font-medium">
+                            <li>
+                                <Link href="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/about">About</Link>
+                            </li>
+                        </ul>
+                    ) : (
+                        // Expanded view
+                        <ul className="flex-1 flex items-center justify-center md:justify-start md:px-4 md:gap-4 gap-2 md:text-sm text-xs font-medium flex-wrap">
+                            <li>
+                                <Link href="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link href="/services">Services</Link>
+                            </li>
+                            <li>
+                                <Link href="/about">About</Link>
+                            </li>
+                            <li>
+                                <Link href="/projects">Projects</Link>
+                            </li>
+                            <li className="hidden md:block">
+                                {/* News hidden on phone, shown on desktop */}
+                                <Link href="/news">News</Link>
+                            </li>
+                            <li>
+                                <Link href="/contact">Contact</Link>
+                            </li>
+                        </ul>
+                    )}
 
+                    {/* Toggle button */}
                     <button
                         onClick={() => setExpanded((s) => !s)}
                         className="p-2 rounded-full hover:bg-black/5"
@@ -136,8 +140,7 @@ export default function Navbar() {
                 {expanded && (
                     <div className="px-6 pb-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                            {/* Desktop shows Home + About + Services */}
-                            {/* Mobile shows only Home + Services */}
+                            {/* Home subsections */}
                             <div>
                                 <h4 className="text-base font-semibold mb-2">Home</h4>
                                 <ul className="space-y-2">
@@ -153,27 +156,26 @@ export default function Navbar() {
                                 </ul>
                             </div>
 
-                            {typeof window !== "undefined" &&
-                                window.innerWidth >= 768 && (
-                                    <div>
-                                        <h4 className="text-base font-semibold mb-2">About</h4>
-                                        <ul className="space-y-2">
-                                            <li>
-                                                <Link href="/why-us">Why Work With Us</Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/vision">Vision</Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/staff">Our Staff</Link>
-                                            </li>
-                                            <li>
-                                                <Link href="/founders">Founders</Link>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                )}
+                            {/* About subsections (desktop only) */}
+                            <div className="hidden md:block">
+                                <h4 className="text-base font-semibold mb-2">About</h4>
+                                <ul className="space-y-2">
+                                    <li>
+                                        <Link href="/why-us">Why Work With Us</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/vision">Vision</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/staff">Our Staff</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/founders">Founders</Link>
+                                    </li>
+                                </ul>
+                            </div>
 
+                            {/* Services subsections */}
                             <div>
                                 <h4 className="text-base font-semibold mb-2">Services</h4>
                                 <ul className="space-y-2">
