@@ -23,7 +23,7 @@ const services = [
         image: Fullstack,
     },
     {
-        slug: "smm",
+        slug: "#SMM",
         title: "Social Media Management",
         image: SMM,
     },

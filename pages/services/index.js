@@ -1,6 +1,7 @@
 import Head from "next/head";
 import ServiceHero from "@/components/ServiceHero";
 import FullstackSection from "@/components/Fullstack";
+import SMMSection from "@/components/SMM";
 export default function Services() {
     return (
         <>
@@ -27,6 +28,7 @@ export default function Services() {
             <>
                 <ServiceHero />
                 <FullstackSection />
+                <SMMSection />
 
             </>
         </>
