@@ -75,7 +75,7 @@ export default function Navbar() {
             >
                 {/* Top Row */}
                 <div
-                    className={`flex items-center px-4 py-3 mb-6 ${
+                    className={`flex items-center px-4 py-3 mb-6 font-primary ${
                         expanded
                             ? "justify-between"
                             : "justify-evenly"
@@ -138,7 +138,7 @@ export default function Navbar() {
 
                 {/* Subsections (expanded only) */}
                 {expanded && (
-                    <div className="px-6 pb-6">
+                    <div className="px-6 pb-6 font-secondary">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                             {/* Home subsections */}
                             <div>
