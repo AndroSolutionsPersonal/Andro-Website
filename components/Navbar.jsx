@@ -1,168 +1,209 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import Logo from '@/public/Logo-2.png'
-import { motion, AnimatePresence } from "framer-motion";
+"use client";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
+import Logo from "@/public/Logo-2.png";
 
-const navLinks = [
-  {
-    label: "Home",
-    href: "/",
-    className:
-      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
-    mobileClass:
-      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
-  },
-  {
-    label: "About",
-    href: "/about",
-    className:
-      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
-    mobileClass:
-      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
-  },
-  {
-    label: "Services",
-    href: "/services",
-    className:
-      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
-    mobileClass:
-      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
-  },
-  {
-    label: "Projects",
-    href: "/projects",
-    className:
-      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
-    mobileClass:
-      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    className:
-      'relative text-primary cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:text-accent hover:drop-shadow-[0_0_8px_rgba(99,102,241,0.6)] after:content-[""] after:absolute after:left-1/2 after:-bottom-1 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 hover:after:w-3/4',
-    mobileClass:
-      "text-secondary-text hover:text-accent cursor-pointer transition-colors duration-300",
-  },
-];
-
-
-
-const Navbar = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+export default function Navbar() {
+    const [expanded, setExpanded] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
-
-    const toggleSidebar = () => {
-        setIsSidebarOpen((prev) => !prev);
-    };
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > lastScrollY) {
-                setShowNavbar(false); // hide on scroll down
+        const onScroll = () => {
+            const currentScrollY = window.scrollY;
+            setIsScrolled(currentScrollY > 50);
+
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                setIsVisible(false);
             } else {
-                setShowNavbar(true); // show on scroll up
+                setIsVisible(true);
             }
-            setLastScrollY(window.scrollY);
-            setIsScrolled(window.scrollY > 50);
+            setLastScrollY(currentScrollY);
         };
 
-        const handleMouseMove = (e) => {
-            if (e.clientY < 80) {
-                setShowNavbar(true); // show if mouse moves near top
-            }
+        const onMouseMove = (e) => {
+            if (e.clientY < 100) setIsVisible(true);
         };
 
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener("scroll", onScroll);
+        window.addEventListener("mousemove", onMouseMove);
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener("scroll", onScroll);
+            window.removeEventListener("mousemove", onMouseMove);
         };
     }, [lastScrollY]);
-    // Keep 'Home' and 'About' visible at all times; collapse/expand the remaining links
-    const alwaysLinks = navLinks.slice(0, 2);
-    const collapsibleLinks = navLinks.slice(2);
+
+    // Sizes
+    const collapsedWidth = "280px";
+    const collapsedHeight = 60;
+
+    // Expanded width & height adjust per device
+    const expandedWidth = "60vw"; // desktop
+    const expandedHeight = 320; // desktop
+    const expandedHeightMobile = 480; // taller for phones
 
     return (
-        <motion.div
+        <motion.nav
             initial={{ y: -120 }}
-            animate={{ y: showNavbar ? 0 : -120 }}
-            transition={{ duration: 0.2, ease: [0.33, 1, 0.68, 1], delay: !isExpanded ? 0 : 0.2 }}
-            className={`pt-8 ${!isExpanded ? 'px-[18%] md:px-[27%] lg:px-[35%]' : 'px-[4%] md:px-[10%] lg:px-[27%]'} fixed top-0 w-screen left-1/2 -translate-x-1/2 z-50`}
+            animate={{ y: isVisible ? 0 : -120 }}
+            transition={{ duration: 0.28, ease: "easeInOut" }}
+            className="fixed top-4 left-1/2 -translate-x-1/2 z-[60] w-full max-w-[95%] md:max-w-none"
         >
             <motion.div
-                initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className={`outline outline-primary relative rounded-full z-30 w-full flex items-center justify-around transition-colors duration-300 ${isScrolled ? 'bg-secondary/85' : 'bg-secondary shadow-md'} px-4 md:px-8 lg:px-12 py-4`}
+                animate={{
+                    width: expanded
+                        ? window.innerWidth < 768
+                            ? "100%" // phones = full width
+                            : expandedWidth
+                        : collapsedWidth,
+                    height: expanded
+                        ? window.innerWidth < 768
+                            ? expandedHeightMobile
+                            : expandedHeight
+                        : collapsedHeight,
+                    borderRadius: expanded ? 30 : 9999,
+                }}
+                transition={{ duration: 0.3, ease: [0.2, 0.5, 0.9, 1] }}
+                style={{ overflow: "hidden" }}
+                className={`mx-auto bg-secondary shadow-lg ${
+                    isScrolled ? "backdrop-blur-sm bg-secondary/90" : ""
+                } ${expanded && "px-2 md:px-0"}`}
             >
-                <Link
-                    href="/"
-                    className={`${isExpanded ? 'text-right max-[420px]:hidden' : 'flex'}  items-center justify-center w-[35px] h-[35px] cursor-pointer`}
+                {/* Top Row */}
+                <div
+                    className={`flex items-center px-4 py-3 ${
+                        expanded ? "justify-between" : "justify-evenly"
+                    }`}
                 >
-                    <Image
-                        src={Logo}
-                        alt="Andro Solutions"
-                        width={60}
-                        height={60}
-                        priority
-                        className={`object-contain transition-transform duration-700 ease-out hover:rotate-[360deg] hover:scale-110`}
-                    />
-                </Link>
+                    <div className="flex items-center gap-5 flex-wrap">
+                        <Link href="/" className="flex items-center gap-2 px-2">
+                            <Image
+                                src={Logo}
+                                alt="Logo"
+                                width={36}
+                                height={36}
+                                className="object-contain"
+                            />
+                        </Link>
 
-                {/* top-level links: show Home & About always; show remaining links only when menu is expanded */}
-                <nav>
-                    <motion.ul
-                        initial={{  }}
-                        animate={{ transition: { delay: 0.1 } }}
-                        transition={{ duration: 0.1 }}
-                        className={'flex justify-center items-center gap-2 md:gap-6'}>
-                        <li><Link href="/" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Home</Link></li>
-                        <li><Link href="/about" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>About</Link></li>
-                        <AnimatePresence mode="wait">
-                            {isExpanded && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1, transition: { duration: 0.2, ease: "easeInOut", delay: 0.2 } }}
-                                    exit={{ opacity: 0 }}
-                                    // transition={{ duration: 0.4, ease: "easeInOut", delay: 0.3 }}
-                                    className="flex justify-center gap-2 md:gap-6"
-                                >
-                                    <li><Link href="/services" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Service</Link></li>
-                                    <li><Link href="/projects" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Projects</Link></li>
-                                    <li><Link href="/contact" className='relative text-primary cursor-pointer transition-colors duration-300 ease-out hover:text-primary after:content-[""] after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full'>Contact</Link></li>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </motion.ul>
-                </nav>
-                <div className={`${isExpanded ? 'ml-2 md:ml-1' : ''} flex justify-start`}>
-                    <a
-                        href="#"
-                        className={`navbar-burger flex self-center`}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setIsExpanded(!isExpanded);
-                        }}
+                        {/* Collapsed view */}
+                        {!expanded ? (
+                            <ul className="flex items-center gap-6 text-sm font-medium">
+                                <li>
+                                    <Link href="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link href="/about">About</Link>
+                                </li>
+                            </ul>
+                        ) : (
+                            // Expanded view
+                            <ul className="flex items-center gap-4 text-sm font-medium flex-wrap">
+                                <li>
+                                    <Link href="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link href="/services">Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="/about">About</Link>
+                                </li>
+                                <li>
+                                    <Link href="/projects">Projects</Link>
+                                </li>
+                                <li className="hidden md:block">
+                                    {/* Contact only for desktop expanded */}
+                                    <Link href="/contact">Contact</Link>
+                                </li>
+                            </ul>
+                        )}
+                    </div>
+
+                    <button
+                        onClick={() => setExpanded((s) => !s)}
+                        className="p-2 rounded-full hover:bg-black/5"
                     >
-                        {!isExpanded && (
-                            <Menu className="text-xl text-primary" />
-                        )}
-                        {isExpanded && (
-                            <X className=' text-xl cursor-pointer hover:text-black/80 text-primary' />
-                        )}
-                    </a>
+                        {!expanded ? <Menu size={20} /> : <X size={20} />}
+                    </button>
                 </div>
+
+                {/* Subsections (expanded only) */}
+                {expanded && (
+                    <div className="px-6 pb-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                            {/* Desktop shows Home + About + Services */}
+                            {/* Mobile shows only Home + Services */}
+                            <div>
+                                <h4 className="text-base font-semibold mb-2">Home</h4>
+                                <ul className="space-y-2">
+                                    <li>
+                                        <Link href="/services">Services</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/mission">Mission & Vision</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/contact">Reach Out</Link>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            {typeof window !== "undefined" &&
+                                window.innerWidth >= 768 && (
+                                    <div>
+                                        <h4 className="text-base font-semibold mb-2">About</h4>
+                                        <ul className="space-y-2">
+                                            <li>
+                                                <Link href="/why-us">Why Work With Us</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/vision">Vision</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/staff">Our Staff</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/founders">Founders</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                )}
+
+                            <div>
+                                <h4 className="text-base font-semibold mb-2">Services</h4>
+                                <ul className="space-y-2">
+                                    <li>
+                                        <Link href="/services/ui-ux">UI/UX</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services/fullstack">
+                                            Full Stack Development
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services/social-media">
+                                            Social Media Management
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services/consultancy">
+                                            Software Consultancy
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/services/design">Graphic Design</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </motion.div>
-        </motion.div>
+        </motion.nav>
     );
 }
-
-export default Navbar;
