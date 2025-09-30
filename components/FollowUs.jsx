@@ -52,7 +52,7 @@ export default function FollowUsSection() {
             className="relative h-screen w-screen flex items-center justify-center bg-foreground"
         >
             {/* Parent box filling the screen but with padding + rounded edges */}
-            <div className="h-full w-full rounded-3xl shadow-2xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between">
+            <div className="h-full w-full rounded-3xl shadow-2xl p-10 lg:p-16 flex flex-col md:flex-row items-center justify-evenly">
                 {/* Left illustration */}
                 <div className="w-full lg:w-1/2 flex justify-center items-end mb-12 lg:mb-0">
                     <motion.div
