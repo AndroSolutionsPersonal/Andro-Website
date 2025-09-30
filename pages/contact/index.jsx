@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ContactSection from "@/components/ContactSection";
 import WhyUs from "@/components/WhyUs";
 import Head from "next/head";
+import FollowUsSection from "@/components/FollowUs";
 // Reuse the fadeUp function
 const fadeUp = (delay) => ({
   hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -84,6 +85,7 @@ const ContactPage = () => {
           >
               <WhyUs/>
           </motion.section>
+          <FollowUsSection />
       </main>
   );
 };
