@@ -70,21 +70,21 @@ const ContactPage = () => {
               whileInView="visible"
               viewport={{once: false, amount: 0.2}}
               variants={fadeUp(0.2)}
-              className="px-2 pb-2 md:px-4 md:pb-4 mt-[50vh] md:mt-[65vh] overflow-hidden"
+              className="px-2 pb-2 md:px-4 md:pb-4 mt-[50vh] md:mt-[65vh] overflow-hidden bg-foreground"
           >
               <ContactSection/>
           </motion.section>
 
           {/* Why Us Section */}
-          <motion.section
-              initial="hidden"
-              whileInView="visible"
-              viewport={{once: false, amount: 0.2}}
-              variants={fadeUp(0.05)}
-              className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden"
-          >
-              <WhyUs/>
-          </motion.section>
+          {/*<motion.section*/}
+          {/*    initial="hidden"*/}
+          {/*    whileInView="visible"*/}
+          {/*    viewport={{once: false, amount: 0.2}}*/}
+          {/*    variants={fadeUp(0.05)}*/}
+          {/*    className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden"*/}
+          {/*>*/}
+          {/*    <WhyUs/>*/}
+          {/*</motion.section>*/}
           <FollowUsSection />
       </main>
   );
