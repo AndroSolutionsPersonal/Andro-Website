@@ -7,6 +7,7 @@ import whyUs from "@/components/WhyUs";
 import Founders from "@/components/Founders";
 import WhyUs from "@/components/WhyUs2";
 import Head from "next/head";
+import VisionMission from "@/components/AboutMV";
 
 export default function AboutPage() {
     return (
@@ -28,6 +29,7 @@ export default function AboutPage() {
 
             <Hero/>
             <WhyUs/>
+            <VisionMission />
             <Founders/>
 
             {/* Additional About Content */}

@@ -3,6 +3,7 @@ import ServiceHero from "@/components/ServiceHero";
 import FullstackSection from "@/components/Fullstack";
 import SMMSection from "@/components/SMM";
 import UIUXSection from "@/components/UIUX";
+import ConsultancySection from "@/components/Consultancy";
 export default function Services() {
     return (
         <>
@@ -31,6 +32,7 @@ export default function Services() {
                 <UIUXSection />
                 <FullstackSection />
                 <SMMSection />
+                <ConsultancySection />
 
 
             </>
