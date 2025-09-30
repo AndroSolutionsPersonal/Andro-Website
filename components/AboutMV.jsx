@@ -5,7 +5,7 @@ import img from "@/assets/AboutMV.png";
 
 export default function VisionMission() {
     return (
-        <section className="min-h-screen w-full bg-white flex flex-col justify-center items-center px-6 md:px-12 lg:px-20 py-12">
+        <section className="min-h-screen w-full bg-foreground flex flex-col justify-center items-center px-6 md:px-12 lg:px-20 py-12">
             <div className="text-center mb-12 max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#113559]">Our Vision & Mission</h2>
                 <p className="mt-4 text-[#113559]/80">
@@ -34,7 +34,7 @@ export default function VisionMission() {
                 </div>
                 {/* Center column with image */}
                 <div className="flex justify-center items-center">
-                    <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] relative">
+                    <div className="w-[300px] h-[300px] md:w-[400px] md:h-[450px] relative">
                         <Image
                             src={img}
                             alt="Vision and Mission Illustration"
