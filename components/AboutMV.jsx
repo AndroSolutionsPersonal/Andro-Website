@@ -39,7 +39,7 @@ export default function VisionMission() {
                             src={img}
                             alt="Vision and Mission Illustration"
                             fill
-                            className="rounded-2xl shadow-md object-cover aspect-square"
+                            className="rounded-2xl shadow-lg object-cover aspect-square"
                         />
                     </div>
                 </div>
