@@ -28,7 +28,7 @@ const services = [
         image: SMM,
     },
     {
-        slug: "consultancy",
+        slug: "#Consultancy",
         title: "Software Consultancy",
         image: SC,
     },
