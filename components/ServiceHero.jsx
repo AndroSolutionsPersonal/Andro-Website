@@ -33,7 +33,7 @@ const services = [
         image: SC,
     },
     {
-        slug: "graphic",
+        slug: "#Graphic",
         title: "Graphic Design",
         image: GD,
     },

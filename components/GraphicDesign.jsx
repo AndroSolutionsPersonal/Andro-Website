@@ -6,7 +6,7 @@ import graffitiImg from "@/assets/services/GDsec3.png"; // your transparent imag
 
 export default function GraphicDesignSection() {
     return (
-        <section className="w-full min-h-screen bg-background flex flex-col md:flex-row items-center justify-center px-12 py-24 gap-16">
+        <section className="w-full min-h-screen bg-background flex flex-col md:flex-row items-center justify-center px-12 py-24 gap-16" id="Graphic">
 
             {/* Left Side - Graphic Design Importance */}
             <motion.div
