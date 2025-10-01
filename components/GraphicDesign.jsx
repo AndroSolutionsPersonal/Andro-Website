@@ -6,7 +6,7 @@ import graffitiImg from "@/assets/services/GDsec3.png"; // your transparent imag
 
 export default function GraphicDesignSection() {
     return (
-        <section className="w-full min-h-screen bg-background flex flex-col md:flex-row items-center justify-center px-12 py-24 gap-16" id="Graphic">
+        <section className="w-full min-h-screen max-h-screen bg-background flex flex-col md:flex-row items-center justify-center px-12 py-24 gap-16" id="Graphic">
 
             {/* Left Side - Graphic Design Importance */}
             <motion.div
@@ -33,7 +33,7 @@ export default function GraphicDesignSection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
-                className="md:w-1/3 flex justify-center"
+                className="md:w-1/3 flex justify-center md:mb-18"
             >
                 <Image
                     src={graffitiImg}

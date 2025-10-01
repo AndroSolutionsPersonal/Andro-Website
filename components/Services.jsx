@@ -18,7 +18,7 @@ const services = [
         description:
             "End-to-end development services, covering front-end, back-end, and databases with modern frameworks and scalable architecture.",
         icon: <Code2 className="w-6 h-6 text-primary" />,
-        href: "/services#Fullstack"
+        href: "/services#fullstack"
     },
     {
         title: "Social Media Management",
