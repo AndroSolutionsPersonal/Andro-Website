@@ -193,7 +193,7 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/consultancy">
+                                        <Link href="/services#Consultancy">
                                             Software Consultancy
                                         </Link>
                                     </li>
