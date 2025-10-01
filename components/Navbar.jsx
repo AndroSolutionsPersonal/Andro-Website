@@ -23,8 +23,12 @@ export default function Navbar() {
                 setIsVisible(true);
             }
             setLastScrollY(currentScrollY);
+
+            // ✅ Collapse if expanded while scrolling
+            if (expanded) setExpanded(false);
         };
 
+        // ✅ Removed the TS type annotation here
         const onMouseMove = (e) => {
             if (e.clientY < 100) setIsVisible(true);
         };
@@ -36,7 +40,12 @@ export default function Navbar() {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("mousemove", onMouseMove);
         };
-    }, [lastScrollY]);
+    }, [lastScrollY, expanded]);
+
+    // Collapse when any link is clicked
+    const handleLinkClick = () => {
+        if (expanded) setExpanded(false);
+    };
 
     // Sizes
     const collapsedWidth = "280px";
@@ -76,13 +85,15 @@ export default function Navbar() {
                 {/* Top Row */}
                 <div
                     className={`flex items-center px-4 py-3 mb-6 font-primary ${
-                        expanded
-                            ? "justify-between"
-                            : "justify-evenly"
+                        expanded ? "justify-between" : "justify-evenly"
                     }`}
                 >
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 px-2">
+                    <Link
+                        href="/"
+                        className="flex items-center gap-2 px-2"
+                        onClick={handleLinkClick}
+                    >
                         <Image
                             src={Logo}
                             alt="Logo"
@@ -96,33 +107,48 @@ export default function Navbar() {
                     {!expanded ? (
                         <ul className="flex items-center gap-6 text-sm font-medium">
                             <li>
-                                <Link href="/">Home</Link>
+                                <Link href="/" onClick={handleLinkClick}>
+                                    Home
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/about">About</Link>
+                                <Link href="/about" onClick={handleLinkClick}>
+                                    About
+                                </Link>
                             </li>
                         </ul>
                     ) : (
                         // Expanded view
                         <ul className="flex-1 flex items-center justify-center md:justify-start md:px-4 md:gap-4 gap-2 md:text-sm text-xs font-medium flex-wrap">
                             <li>
-                                <Link href="/">Home</Link>
+                                <Link href="/" onClick={handleLinkClick}>
+                                    Home
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/about">About</Link>
+                                <Link href="/about" onClick={handleLinkClick}>
+                                    About
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/services">Services</Link>
+                                <Link href="/services" onClick={handleLinkClick}>
+                                    Services
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/projects">Projects</Link>
+                                <Link href="/projects" onClick={handleLinkClick}>
+                                    Projects
+                                </Link>
                             </li>
                             <li className="hidden md:block">
-                                {/* News hidden on phone, shown on desktop */}
-                                <Link href="/news">News</Link>
+                                <Link href="/news" onClick={handleLinkClick}>
+                                    News
+                                </Link>
                             </li>
                             <li>
-                                <Link href="/contact">Contact</Link>
+                                <Link href="/contact" onClick={handleLinkClick}>
+                                    Contact
+                                </Link>
                             </li>
                         </ul>
                     )}
@@ -145,13 +171,19 @@ export default function Navbar() {
                                 <h4 className="text-base font-semibold mb-2">Home</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <Link href="/#services">Services</Link>
+                                        <Link href="/#services" onClick={handleLinkClick}>
+                                            Services
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/#missionVision">Mission & Vision</Link>
+                                        <Link href="/#missionVision" onClick={handleLinkClick}>
+                                            Mission & Vision
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/contact">Reach Out</Link>
+                                        <Link href="/contact" onClick={handleLinkClick}>
+                                            Reach Out
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -161,16 +193,24 @@ export default function Navbar() {
                                 <h4 className="text-base font-semibold mb-2">About</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <Link href="/about#why-us">Why Work With Us</Link>
+                                        <Link href="/about#why-us" onClick={handleLinkClick}>
+                                            Why Work With Us
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/about#vision">Vision</Link>
+                                        <Link href="/about#vision" onClick={handleLinkClick}>
+                                            Vision
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/about#staff">Our Staff</Link>
+                                        <Link href="/about#staff" onClick={handleLinkClick}>
+                                            Our Staff
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/about#founders">Founders</Link>
+                                        <Link href="/about#founders" onClick={handleLinkClick}>
+                                            Founders
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
@@ -180,25 +220,32 @@ export default function Navbar() {
                                 <h4 className="text-base font-semibold mb-2">Services</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <Link href="/services#UIUX">UI/UX</Link>
+                                        <Link href="/services#UIUX" onClick={handleLinkClick}>
+                                            UI/UX
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services#fullstack">
+                                        <Link href="/services#fullstack" onClick={handleLinkClick}>
                                             Full Stack Development
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services#SMM">
+                                        <Link href="/services#SMM" onClick={handleLinkClick}>
                                             Social Media Management
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services#Consultancy">
+                                        <Link
+                                            href="/services#Consultancy"
+                                            onClick={handleLinkClick}
+                                        >
                                             Software Consultancy
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services#Graphic">Graphic Design</Link>
+                                        <Link href="/services#Graphic" onClick={handleLinkClick}>
+                                            Graphic Design
+                                        </Link>
                                     </li>
                                 </ul>
                             </div>
