@@ -148,7 +148,7 @@ export default function Navbar() {
                                         <Link href="/#services">Services</Link>
                                     </li>
                                     <li>
-                                        <Link href="/#mission">Mission & Vision</Link>
+                                        <Link href="/#missionVision">Mission & Vision</Link>
                                     </li>
                                     <li>
                                         <Link href="/contact">Reach Out</Link>
