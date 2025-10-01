@@ -60,7 +60,7 @@ export default function ServicesSection() {
     return (
         <section
             ref={containerRef}
-            className="relative flex flex-col lg:flex-row bg-foreground min-h-auto lg:min-h-screen"
+            className="relative flex flex-col lg:flex-row bg-foreground min-h-auto lg:min-h-screen" id="#service"
         >
             {/* Left column */}
             <div className="w-full lg:w-1/2 relative">

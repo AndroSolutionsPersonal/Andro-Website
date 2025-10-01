@@ -145,10 +145,10 @@ export default function Navbar() {
                                 <h4 className="text-base font-semibold mb-2">Home</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <Link href="/services">Services</Link>
+                                        <Link href="#services">Services</Link>
                                     </li>
                                     <li>
-                                        <Link href="/mission">Mission & Vision</Link>
+                                        <Link href="#mission">Mission & Vision</Link>
                                     </li>
                                     <li>
                                         <Link href="/contact">Reach Out</Link>
@@ -161,16 +161,16 @@ export default function Navbar() {
                                 <h4 className="text-base font-semibold mb-2">About</h4>
                                 <ul className="space-y-2">
                                     <li>
-                                        <Link href="/why-us">Why Work With Us</Link>
+                                        <Link href="/about#why-us">Why Work With Us</Link>
                                     </li>
                                     <li>
-                                        <Link href="/vision">Vision</Link>
+                                        <Link href="/about#vision">Vision</Link>
                                     </li>
                                     <li>
-                                        <Link href="/staff">Our Staff</Link>
+                                        <Link href="/about#staff">Our Staff</Link>
                                     </li>
                                     <li>
-                                        <Link href="/founders">Founders</Link>
+                                        <Link href="/about#founders">Founders</Link>
                                     </li>
                                 </ul>
                             </div>
