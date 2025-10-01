@@ -4,6 +4,7 @@ import FullstackSection from "@/components/Fullstack";
 import SMMSection from "@/components/SMM";
 import UIUXSection from "@/components/UIUX";
 import ConsultancySection from "@/components/Consultancy";
+import GraphicDesignSection from "@/components/GraphicDesign";
 export default function Services() {
     return (
         <>
@@ -33,6 +34,7 @@ export default function Services() {
                 <FullstackSection />
                 <SMMSection />
                 <ConsultancySection />
+                <GraphicDesignSection />
 
 
             </>
