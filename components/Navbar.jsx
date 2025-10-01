@@ -183,7 +183,7 @@ export default function Navbar() {
                                         <Link href="/services#UIUX">UI/UX</Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/fullstack">
+                                        <Link href="/services#fullstack">
                                             Full Stack Development
                                         </Link>
                                     </li>
