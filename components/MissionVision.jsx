@@ -27,7 +27,7 @@ export default function MissionVision() {
         <section
             ref={containerRef}
             className="relative bg-foreground"
-            style={{ height: "240vh", paddingTop: "4rem", paddingBottom: "4rem" }}
+            style={{ height: "240vh", paddingTop: "4rem", paddingBottom: "4rem" }} id="missionVision"
         >
             {/* Mission (top on mobile, fades out after reveal) */}
             <motion.div
