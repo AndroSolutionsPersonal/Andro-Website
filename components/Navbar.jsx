@@ -198,7 +198,7 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/design">Graphic Design</Link>
+                                        <Link href="/services#Graphic">Graphic Design</Link>
                                     </li>
                                 </ul>
                             </div>
