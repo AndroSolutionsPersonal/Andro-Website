@@ -115,7 +115,7 @@ export default function ServicesHero() {
                 </motion.div>
 
                 {/* Right hover-expand services */}
-                <div className="flex flex-1 gap-4 h-[420px] pr-6 md:pr-12">
+                <div className="hidden md:flex flex-1 gap-4 h-[420px] pr-6 md:pr-12">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.slug}
