@@ -188,7 +188,7 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link href="/services/social-media">
+                                        <Link href="/services#SMM">
                                             Social Media Management
                                         </Link>
                                     </li>
