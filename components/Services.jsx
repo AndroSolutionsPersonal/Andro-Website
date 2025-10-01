@@ -11,30 +11,35 @@ const services = [
         description:
             "We craft user-centered digital experiences that combine functionality with aesthetic appeal, ensuring smooth and engaging journeys.",
         icon: <PenTool className="w-6 h-6 text-primary" />,
+        href: "/services#UIUX"
     },
     {
         title: "Full Stack Development",
         description:
             "End-to-end development services, covering front-end, back-end, and databases with modern frameworks and scalable architecture.",
         icon: <Code2 className="w-6 h-6 text-primary" />,
+        href: "/services#Fullstack"
     },
     {
         title: "Social Media Management",
         description:
             "Boost your brand presence online through tailored social strategies, creative campaigns, and analytics-driven growth.",
         icon: <Users className="w-6 h-6 text-primary" />,
+        href: "/services#SMM"
     },
     {
         title: "Software Consultancy",
         description:
             "We provide expert guidance on system design, optimization, and digital transformation to meet your business needs.",
         icon: <Briefcase className="w-6 h-6 text-primary" />,
+        href: "/services#Consultancy",
     },
     {
         title: "Graphic Design",
         description:
             "From logos to full brand identities, we deliver compelling visual content that resonates with your audience.",
         icon: <Palette className="w-6 h-6 text-primary" />,
+        href: "/services#Graphic"
     },
 ];
 
@@ -100,7 +105,7 @@ export default function ServicesSection() {
                                         {service.description}
                                     </p>
                                     <a
-                                        href="#"
+                                        href={service.href}
                                         className="inline-flex items-center mt-3 text-sm font-medium text-primary hover:underline"
                                     >
                                         Learn more →
@@ -152,7 +157,7 @@ export default function ServicesSection() {
                                                 {service.description}
                                             </p>
                                             <a
-                                                href="#"
+                                                href={service.href}
                                                 className="inline-flex items-center mt-3 text-sm font-medium text-primary hover:underline"
                                             >
                                                 Learn more →
