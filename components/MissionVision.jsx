@@ -46,11 +46,11 @@ export default function MissionVision() {
             </motion.div>
 
             {/* Sticky shrinking image */}
-            <div className="sticky top-0 h-screen flex items-center justify-center">
+            <div className="sticky top-0 h-screen w-full flex items-center justify-center md:px-0 px-4">
                 <motion.div
                     style={{ scale: imageScale, y: imageY }}
                     transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.8 }}
-                    className="relative w-[96vw] h-[98vh] max-w-8xl rounded-[30px] overflow-hidden shadow-2xl"
+                    className=" relative w-full h-[98vh] md:w-[98vw] md:h-[98vh] max-w-8xl rounded-[30px] overflow-hidden shadow-2xl "
                 >
                     <Image src={bgImage} alt="Mission Vision background" fill className="object-cover" />
                     {/* Blue overlay */}
@@ -84,7 +84,7 @@ export default function MissionVision() {
                     <div className="flex flex-col justify-center text-center">
                         <h3 className="font-gilmer text-2xl text-primary">Our Vision</h3>
                         <p className="mt-3 font-montserrat text-black text-justify max-w-sm mx-auto">
-                            Be a catalyst for sustainable digital transformation across the continent and beyond.
+                            Be a catalyst for sustainable digital transformation across the continent and beyond. We aim to lead transformative projects that empower communities and establish Ethiopia as a tech hub in the region.
                         </p>
                     </div>
                 </div>
@@ -108,8 +108,7 @@ export default function MissionVision() {
                     <div className="flex flex-col md:justify-center justify-evenly text-center md:text-left">
                         <h3 className="font-gilmer text-2xl md:text-3xl md:pl-16 text-primary">Our Vision</h3>
                         <p className="mt-3 font-montserrat md:pl-16 text-black text-justify max-w-sm mx-auto md:mx-0">
-                            Be a catalyst for sustainable digital transformation across the continent and beyond.
-                        </p>
+                            Be a catalyst for sustainable digital transformation across the continent and beyond.</p>
                     </div>
                 </div>
             </motion.div>
