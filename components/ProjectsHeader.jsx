@@ -28,7 +28,7 @@ export default function ProjectsHeader() {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-secondary/30 to-primary/80" />
+      {/*<div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-secondary/30 to-primary/80" />*/}
 
       {/* Content */}
       <div className="relative z-10 text-secondary px-6">

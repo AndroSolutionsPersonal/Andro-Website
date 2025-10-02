@@ -130,7 +130,7 @@ export default function ProjectsPage() {
                       <h4 className="mt-2 text-2xl font-semibold">
                         {project.title}
                       </h4>
-                      <p className="mt-4 max-w-md text-center text-secondary">
+                      <p className="mt-4 max-w-md text-center text-primary/80">
                         {project.description}
                       </p>
 
