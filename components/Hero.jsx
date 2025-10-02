@@ -97,7 +97,7 @@ export default function Hero() {
 
                 {/* Content sits above the canvas */}
                 <div className="relative z-10 max-w-4xl text-center px-4">
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-tight">
                         Where Ideas Become Impact
                     </h1>
                     <p className="mt-5 text-md md:text-2xl text-secondary">
