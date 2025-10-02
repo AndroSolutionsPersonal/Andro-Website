@@ -6,7 +6,7 @@ import { Lightbulb, Globe2, ShieldCheck } from "lucide-react";
 
 export default function ConsultancySection() {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center bg-foreground text-center px-6" id="Consultancy">
+        <section className="min-h-screen flex flex-col justify-center items-center bg-foreground text-center px-6 my-4" id="Consultancy">
             <div className="max-w-4xl mx-auto">
                 {/* Section Title */}
                 <h2 className="text-3xl md:text-4xl font-bold text-[#113559] mb-4">
