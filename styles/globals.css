@@ -2,7 +2,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/*@custom-variant dark (&:is(.dark *));*/
 
 :root {
   /* Brand Colors */
@@ -13,7 +13,7 @@
 
   /* Background / Foreground */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
 
   /* Fonts */
   --font-primary: "Gilmer", sans-serif;
