@@ -140,12 +140,12 @@ export default function Navbar() {
                                     Projects
                                 </Link>
                             </li>
-                            <li className="hidden md:block">
+                            <li>
                                 <Link href="/news" onClick={handleLinkClick}>
                                     News
                                 </Link>
                             </li>
-                            <li>
+                            <li className="hidden md:block">
                                 <Link href="/contact" onClick={handleLinkClick}>
                                     Contact
                                 </Link>
