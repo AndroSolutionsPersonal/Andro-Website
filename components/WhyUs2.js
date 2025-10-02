@@ -87,7 +87,7 @@ const WhyUs = () => {
                                     <div className="p-3 rounded-full bg-[#113559]/10 group-hover:rotate-6 transition-transform duration-500">
                                         {f.icon}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-[#113559]">{f.title}</h3>
+                                    <h3 className="text-md font-semibold text-[#113559]">{f.title}</h3>
                                 </div>
                                 {/* Description (no empty space before hover) */}
                                 <p className="mt-3 text-sm text-[#113559]/70 opacity-100 max-h-20 group-hover:text-[#113559] transition-colors duration-500">
