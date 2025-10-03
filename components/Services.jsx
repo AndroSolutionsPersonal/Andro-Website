@@ -69,8 +69,8 @@ const ServiceCard = ({ service, motionProps }) => (
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10 transition duration-500 group-hover:from-black/60" />
 
-            <CardContent className="relative z-20 flex flex-col justify-end h-full p-10">
-                <div className="flex items-center space-x-4 mb-4">
+            <CardContent className="relative z-20 flex flex-col justify-end h-full p-10" >
+                <div className="flex items-center space-x-4 mb-4" >
                     <div className="p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg">
                         {service.icon}
                     </div>
