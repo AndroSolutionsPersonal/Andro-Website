@@ -78,7 +78,7 @@ export default function MissionVision() {
             <motion.div
                 style={{ opacity: visionOpacity, top: "100vh" }}
                 transition={{ ease: "easeOut", duration: 0.8 }}
-                className="md:hidden h-auto flex items-center justify-center py-16 sticky"
+                className="md:hidden h-auto flex items-center justify-center mt-3 py-16 sticky"
             >
                 <div className="max-w-7xl w-full px-4 flex flex-col items-center justify-center">
                     <div className="flex flex-col justify-center text-center">
