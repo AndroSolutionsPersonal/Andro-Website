@@ -8,7 +8,7 @@ import Image from "next/image";
 import experienceImg from "@/assets/WhyUs/Exp.png";
 import collaborativeImg from "@/assets/WhyUs/colab.png";
 import futureImg from "@/assets/WhyUs/future.png";
-import passionImg from "@/assets/MV.png";
+import passionImg from "@/assets/WhyUs/passion.png";
 
 const reasons = [
     {
@@ -67,7 +67,7 @@ export default function WhyUsScroll() {
             className="relative flex flex-col gap-32 lg:gap-48 py-32 px-6 lg:px-20 bg-foreground overflow-hidden"
         >
             {/* Header */}
-            <div className="text-center mb-20">
+            <div className="text-center mb-2">
                 <h2 className="text-5xl md:text-6xl font-[Gilmer] font-bold text-[#113559]">
                     Why Work With Us
                 </h2>
