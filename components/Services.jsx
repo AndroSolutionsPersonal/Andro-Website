@@ -59,7 +59,7 @@ const services = [
 const ServiceCard = ({ service, motionProps }) => (
     <motion.div {...motionProps} className="w-full max-w-[840px]">
         <Card
-            className="relative w-full h-[400px] sm:h-[500px] lg:h-[500px] rounded-4xl overflow-hidden group shadow-xl"
+            className="relative w-full h-[400px] sm:h-[400px] lg:h-[400px] rounded-4xl overflow-hidden group shadow-xl"
             style={{
                 backgroundImage: `url(${service.image.src})`,
                 backgroundSize: "cover",
@@ -71,10 +71,10 @@ const ServiceCard = ({ service, motionProps }) => (
 
             <CardContent className="relative z-20 flex flex-col justify-end h-full p-10" >
                 <div className="flex items-center space-x-4 mb-4" >
-                    <div className="p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg">
-                        {service.icon}
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-gilmer text-white drop-shadow-lg">
+                    {/*<div className="p-4 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg">*/}
+                    {/*    {service.icon}*/}
+                    {/*</div>*/}
+                    <h3 className="text-3xl sm:text-3xl font-gilmer text-white drop-shadow-lg">
                         {service.title}
                     </h3>
                 </div>
