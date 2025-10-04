@@ -79,14 +79,6 @@ export default function ServicesHero() {
             >
                 {/* Background Image slightly blurred */}
                 <div className="absolute inset-0 -z-10">
-                    {/*<Image*/}
-                    {/*    src={img}*/}
-                    {/*    alt="Andro Solutions Background"*/}
-                    {/*    fill*/}
-                    {/*    priority*/}
-                    {/*    placeholder="blur"*/}
-                    {/*    className="object-cover blur-lg"*/}
-                    {/*/>*/}
                     <div className="absolute inset-0 bg-[#113559]/70" />
                 </div>
 
