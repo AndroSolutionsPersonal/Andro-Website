@@ -75,7 +75,7 @@ export default function ServicesHero() {
                     overflow: "hidden",
                     boxSizing: "border-box",
                 }}
-                className="relative flex max-w-full"
+                className="sticky flex max-w-full"
             >
                 {/* Background Image slightly blurred */}
                 <div className="absolute inset-0 -z-10">
