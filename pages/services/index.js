@@ -5,6 +5,8 @@ import SMMSection from "@/components/SMM";
 import UIUXSection from "@/components/UIUX";
 import ConsultancySection from "@/components/Consultancy";
 import GraphicDesignSection from "@/components/GraphicDesign";
+import Footer from "@/components/Footer";
+import ContactSection from "@/components/ContactSection";
 export default function Services() {
     return (
         <>
@@ -43,7 +45,14 @@ export default function Services() {
                     </div>
                 </div>
                 <ConsultancySection />
-                <GraphicDesignSection />
+                <div>
+                    <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden relative z-10">
+                        <GraphicDesignSection/>
+                    </section>
+                    <div className="sticky bottom-0">
+                        <Footer/>
+                    </div>
+                </div>
 
 
             </>

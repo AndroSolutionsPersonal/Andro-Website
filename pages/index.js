@@ -28,7 +28,7 @@ export default function Home() {
             <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden relative">
                 <ContactSection/>
             </section>
-                <div className="sticky bottom-0">
+                <div className="sticky bottom-0 z-10">
                     <Footer/>
                 </div>
             </div>
