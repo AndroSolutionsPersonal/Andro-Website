@@ -1,105 +1,136 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { Card } from "@/components/ui/card";
-import { Briefcase, Users, Rocket, Heart } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
-const features = [
+// 🖼️ Import images
+import experienceImg from "@/assets/MV.png";
+import collaborativeImg from "@/assets/MV.png";
+import futureImg from "@/assets/MV.png";
+import passionImg from "@/assets/MV.png";
+
+const reasons = [
     {
-        icon: <Briefcase className="w-7 h-7 text-[#113559]" />,
+        num: 1,
         title: "Proven Experience",
         desc: "We’ve successfully partnered with businesses across industries to bring ideas to life.",
+        img: experienceImg,
     },
     {
-        icon: <Users className="w-7 h-7 text-[#113559]" />,
+        num: 2,
         title: "Collaborative Approach",
         desc: "Your goals drive our process — we work hand in hand from start to finish.",
+        img: collaborativeImg,
     },
     {
-        icon: <Rocket className="w-7 h-7 text-[#113559]" />,
+        num: 3,
         title: "Future-Ready Solutions",
         desc: "We design with tomorrow in mind — scalable, innovative, and built to last.",
+        img: futureImg,
     },
     {
-        icon: <Heart className="w-7 h-7 text-[#113559]" />,
+        num: 4,
         title: "Passion & Care",
         desc: "Every project is crafted with detail, love, and a commitment to excellence.",
+        img: passionImg,
     },
 ];
 
-const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+export default function WhyUsScroll() {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end end"],
+    });
 
-const WhyUs = () => {
-    const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: false });
-    const controls = useAnimation();
+    // Hook-safe transforms (fixed number of reasons)
+    const makeTransform = (index) => {
+        const start = index / reasons.length;
+        const end = (index + 1) / reasons.length;
+        return {
+            fill: useTransform(scrollYProgress, [start, end], ["#B0BCC8", "#113559"]),
+            opacity: useTransform(scrollYProgress, [start, end], [0.9, 1]),
+        };
+    };
 
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        } else {
-            controls.start("hidden");
-        }
-    }, [inView, controls]);
+    const transforms = [
+        makeTransform(0),
+        makeTransform(1),
+        makeTransform(2),
+        makeTransform(3),
+    ];
 
     return (
         <section
             ref={ref}
-            className="relative min-h-screen flex items-center py-24 px-6 overflow-hidden"
+            className="relative flex flex-col gap-32 lg:gap-48 py-32 px-6 lg:px-20 bg-white overflow-hidden"
         >
-            <div className="relative z-10 max-w-6xl mx-auto w-full text-center">
-                <motion.h2
-                    initial="hidden"
-                    animate={controls}
-                    variants={fadeUp}
-                    className="text-4xl md:text-6xl font-bold tracking-tight text-[#113559]"
-                >
-                    Why Work With Us?
-                </motion.h2>
+            {/* Header */}
+            <div className="text-center mb-20">
+                <h2 className="text-5xl md:text-6xl font-[Gilmer] font-bold text-[#113559]">
+                    Why Work With Us
+                </h2>
+                <p className="text-lg mt-4 text-[#113559]/80 font-[Montserrat] max-w-2xl mx-auto">
+                    Our values and approach make us more than just a service provider — we’re your growth partner.
+                </p>
+            </div>
 
-                <motion.p
-                    initial="hidden"
-                    animate={controls}
-                    variants={fadeUp}
-                    transition={{ delay: 0.2 }}
-                    className="mt-4 text-lg text-[#113559]/80 max-w-2xl mx-auto"
-                >
-                    We don’t just build projects — we build long-term partnerships and solutions
-                    that stand out.
-                </motion.p>
+            {/* Timeline and content */}
+            <div className="relative">
+                {/* Animated vertical line — perfectly centered with circles */}
+                <motion.div
+                    style={{
+                        scaleY: scrollYProgress,
+                        originY: 0,
+                        backgroundColor: "#113559",
+                    }}
+                    className="absolute md:left-[30px] left-[20px] top-0 w-[3px] h-full rounded-full"
+                />
 
-                <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {features.map((f, i) => (
-                        <motion.div
-                            key={i}
-                            initial="hidden"
-                            animate={controls}
-                            variants={fadeUp}
-                            transition={{ delay: 0.3 + i * 0.2 }}
+                <div className="flex flex-col gap-32 relative">
+                    {reasons.map((r, i) => (
+                        <div
+                            key={r.num}
+                            className="relative flex flex-col lg:flex-row items-center gap-12"
                         >
-                            <Card className="group relative flex flex-col items-center text-center p-6 rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer">
-                                {/* Icon + Title grouped */}
-                                <div className="flex flex-col items-center space-y-2 transition-transform duration-500 group-hover:-translate-y-1">
-                                    <div className="p-3 rounded-full bg-[#113559]/10 group-hover:rotate-6 transition-transform duration-500">
-                                        {f.icon}
-                                    </div>
-                                    <h3 className="text-md font-semibold text-[#113559]">{f.title}</h3>
+                            {/* LEFT — Number & Text */}
+                            <div className="relative flex items-center gap-6 w-full lg:w-1/2">
+                                <motion.div
+                                    style={{ backgroundColor: transforms[i].fill }}
+                                    className="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md relative z-10"
+                                >
+                                    {r.num}
+                                </motion.div>
+
+                                <div>
+                                    <h3 className="text-2xl font-[Gilmer] text-[#113559]">
+                                        {r.title}
+                                    </h3>
+                                    <p className="mt-3 text-[#113559]/70 font-[Montserrat] leading-relaxed max-w-md">
+                                        {r.desc}
+                                    </p>
                                 </div>
-                                {/* Description (no empty space before hover) */}
-                                <p className="mt-3 text-sm text-[#113559]/70 opacity-100 max-h-20 group-hover:text-[#113559] transition-colors duration-500">
-                                    {f.desc}
-                                </p>
-                            </Card>
-                        </motion.div>
+                            </div>
+
+                            {/* RIGHT — Clean Image only */}
+                            <motion.div
+                                style={{ opacity: transforms[i].opacity }}
+                                className="relative w-full lg:w-1/2 h-[300px] lg:h-[400px] overflow-hidden rounded-2xl shadow-lg"
+                            >
+                                <Image
+                                    src={r.img}
+                                    alt={r.title}
+                                    fill
+                                    className="object-cover rounded-2xl brightness-[0.7] transition-all duration-700"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority={i === 0}
+                                />
+                            </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
         </section>
     );
-};
-
-export default WhyUs;
+}
