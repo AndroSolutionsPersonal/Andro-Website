@@ -2,9 +2,9 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ContactSection from "@/components/ContactSection";
-import WhyUs from "@/components/WhyUs";
 import Head from "next/head";
 import FollowUsSection from "@/components/FollowUs";
+import Footer from "@/components/Footer";
 // Reuse the fadeUp function
 const fadeUp = (delay) => ({
   hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -26,7 +26,7 @@ const ContactPage = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]); // fade out as user scrolls
 
   return (
-      <main className="min-h-screen w-full bg-background text-white font-sans overflow-hidden">
+      <main className="min-h-screen w-full bg-foreground text-white font-sans overflow-clip">
           <Head>
               <title>Contact Us | Andro Solutions</title>
               <meta name="description"
@@ -48,7 +48,7 @@ const ContactPage = () => {
               whileInView="visible"
               viewport={{once: true, amount: 0.5}}
               variants={fadeUp(0.1)}
-              className="z-0 fixed w-full flex flex-col items-center justify-center text-center mt-[10vh] md:mt-[15vh] py-20 md:py-28 px-6 md:px-12"
+              className="sticky top-10 w-full flex flex-col items-center justify-center text-center mt-[10vh] md:mt-[15vh] py-20 md:py-28 px-6 md:px-12"
           >
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                   Let’s Build Something Together
@@ -66,26 +66,24 @@ const ContactPage = () => {
 
           {/* Contact Section */}
           <motion.section
-              initial="hidden"
+              initial=""
               whileInView="visible"
               viewport={{once: false, amount: 0.2}}
               variants={fadeUp(0.2)}
-              className="px-2 pb-2 md:px-4 md:pb-4 mt-[50vh] md:mt-[65vh] overflow-hidden bg-foreground"
+              className="px-2 pb-2 md:px-4 md:pb-4  overflow-hidden bg-foreground"
           >
               <ContactSection/>
           </motion.section>
 
-          {/* Why Us Section */}
-          {/*<motion.section*/}
-          {/*    initial="hidden"*/}
-          {/*    whileInView="visible"*/}
-          {/*    viewport={{once: false, amount: 0.2}}*/}
-          {/*    variants={fadeUp(0.05)}*/}
-          {/*    className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden"*/}
-          {/*>*/}
-          {/*    <WhyUs/>*/}
-          {/*</motion.section>*/}
-          <FollowUsSection />
+
+          <div>
+              <div className="relative z-10 mb-5">
+                  <FollowUsSection />
+              </div>
+              <div className="sticky bottom-0">
+                  <Footer/>
+              </div>
+          </div>
       </main>
   );
 };
