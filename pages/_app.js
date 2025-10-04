@@ -66,7 +66,7 @@ export default function App({ Component, pageProps }) {
                     </motion.div>
                 </AnimatePresence>
 
-                <Footer />
+                {/*<Footer />*/}
                 <Toaster
                     position="top-center"
                     reverseOrder={false} />
