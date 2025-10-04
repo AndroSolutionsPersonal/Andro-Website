@@ -7,7 +7,7 @@ import Image from "next/image";
 // 🖼️ Import images
 import experienceImg from "@/assets/WhyUs/Exp.png";
 import collaborativeImg from "@/assets/WhyUs/colab.png";
-import futureImg from "@/assets/MV.png";
+import futureImg from "@/assets/WhyUs/future.png";
 import passionImg from "@/assets/MV.png";
 
 const reasons = [
