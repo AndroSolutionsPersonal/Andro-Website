@@ -33,12 +33,12 @@ export default function Services() {
                 <UIUXSection />
                 <div className="relative">
                     {/* Fullstack - Normal flow */}
-                    <div className="sticky top-0 z-10">
+                    <div className="md:sticky md:top-0 md:z-20">
                         <FullstackSection />
                     </div>
 
                     {/* SMM - Overlaps on scroll */}
-                    <div className="relative z-20">
+                    <div className="md:relative md:z-30">
                         <SMMSection />
                     </div>
                 </div>
