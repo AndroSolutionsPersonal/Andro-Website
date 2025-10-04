@@ -31,8 +31,17 @@ export default function Services() {
             <>
                 <ServiceHero />
                 <UIUXSection />
-                <FullstackSection />
-                <SMMSection />
+                <div className="relative">
+                    {/* Fullstack - Normal flow */}
+                    <div className="sticky top-0 z-10">
+                        <FullstackSection />
+                    </div>
+
+                    {/* SMM - Overlaps on scroll */}
+                    <div className="relative z-20">
+                        <SMMSection />
+                    </div>
+                </div>
                 <ConsultancySection />
                 <GraphicDesignSection />
 
