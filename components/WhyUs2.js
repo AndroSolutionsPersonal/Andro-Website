@@ -6,7 +6,7 @@ import Image from "next/image";
 
 // 🖼️ Import images
 import experienceImg from "@/assets/WhyUs/Exp.png";
-import collaborativeImg from "@/assets/MV.png";
+import collaborativeImg from "@/assets/WhyUs/colab.png";
 import futureImg from "@/assets/MV.png";
 import passionImg from "@/assets/MV.png";
 
