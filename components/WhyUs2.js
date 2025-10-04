@@ -64,7 +64,7 @@ export default function WhyUsScroll() {
     return (
         <section
             ref={ref}
-            className="relative flex flex-col gap-32 lg:gap-48 py-32 px-6 lg:px-20 bg-white overflow-hidden"
+            className="relative flex flex-col gap-32 lg:gap-48 py-32 px-6 lg:px-20 bg-foreground overflow-hidden"
         >
             {/* Header */}
             <div className="text-center mb-20">
