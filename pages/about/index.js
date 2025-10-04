@@ -8,6 +8,7 @@ import Founders from "@/components/Founders";
 import WhyUs from "@/components/WhyUs2";
 import Head from "next/head";
 import VisionMission from "@/components/AboutMV";
+import Footer from "@/components/Footer";
 
 export default function AboutPage() {
     return (
@@ -32,8 +33,9 @@ export default function AboutPage() {
             <VisionMission />
             <Founders/>
 
+
             {/* Additional About Content */}
-            <section className="max-w-6xl mx-auto px-6 md:px-12 py-16 text-[#113559]">
+            <section className=" relative z-10  max-w-full mx-auto px-6 md:px-12 py-16 text-[#113559] ">
                 <h2 className="text-3xl font-gilmer font-bold mb-6">
                     About Andro Solutions
                 </h2>
@@ -50,7 +52,9 @@ export default function AboutPage() {
                     long-term relationships, empowering businesses to thrive in today’s
                     dynamic landscape.
                 </p>
-            </section>
+            </section><Footer/>
+
+
         </main>
     );
 }

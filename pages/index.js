@@ -25,10 +25,10 @@ export default function Home() {
             <ServicesSection/>
             <MissionVision/>
             <div>
-            <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden relative">
+            <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden z-10 relative">
                 <ContactSection/>
             </section>
-                <div className="sticky bottom-0 z-10">
+                <div className="sticky bottom-0 ">
                     <Footer/>
                 </div>
             </div>
