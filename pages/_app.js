@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
 
     return (
         <LenisProvider>
-            <main className="font-sans bg-foreground text-[#113559]">
+            <main className="font-sans bg-foreground text-[#113559] max-w-screen overflow-clip">
                 <Navbar />
 
                 {/* Routing Loading Animation */}

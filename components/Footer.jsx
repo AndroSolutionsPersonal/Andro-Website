@@ -2,9 +2,9 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="px-2 pb-2 md:px-4 md:pb-4 w-screen bg-foreground mt-10 md:mt-2">
+    <footer className="px-2 pb-2 md:px-5 md:pb-4 max-w-screen bg-foreground mt-10 md:mt-2">
       <footer className="z-20 bg-primary text-secondary-text py-10 rounded-3xl font-sans ">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
           {/* Top Section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             {/* Services */}

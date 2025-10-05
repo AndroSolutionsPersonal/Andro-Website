@@ -6,7 +6,7 @@ import Head from "next/head";
 import Footer from "@/components/Footer";
 export default function Home() {
     return (
-        <>
+        <div className="">
             <Head>
                 <title>Andro Solutions | Driving Innovation in Technology & Business</title>
                 <meta name="description"
@@ -32,6 +32,6 @@ export default function Home() {
                     <Footer/>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
