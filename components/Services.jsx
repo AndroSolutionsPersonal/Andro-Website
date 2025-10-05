@@ -167,6 +167,7 @@ export default function ServicesSection() {
                         >
                             Our Services
                         </motion.h2>
+
                         <motion.p
                             style={{ y: paragraphY, opacity: paragraphOpacity }}
                             className="max-w-lg text-lg text-secondary-foreground font-montserrat"
