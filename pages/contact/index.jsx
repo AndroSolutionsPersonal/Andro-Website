@@ -39,6 +39,7 @@ const ContactPage = () => {
               <meta property="og:image" content="/og-images/contact.jpg"/>
               <meta property="og:type" content="website"/>
               <meta property="og:url" content="https://yourdomain.com/contact"/>
+
           </Head>
 
           {/* Hero Header */}
