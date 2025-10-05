@@ -25,6 +25,7 @@ export default function AboutPage() {
                       content="Discover our story, values, and the people behind Andro Solutions."/>
                 <meta property="og:image" content="/og-images/about.jpg"/>
                 <meta property="og:type" content="website"/>
+
                 <meta property="og:url" content="https://yourdomain.com/about"/>
             </Head>
 
