@@ -16,6 +16,7 @@ export default function AboutPage() {
             {/* Hero Section */}
             <Head>
                 <title>About Us | Andro Solutions</title>
+
                 <meta name="description"
                       content="Learn more about Andro Solutions, our mission, vision, and the team driving technology and business innovation."/>
                 <meta name="keywords"
