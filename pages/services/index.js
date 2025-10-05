@@ -16,6 +16,7 @@ export default function Services() {
                     name="description"
                     content="Discover Andro Solutions' services — from software development and design to business consulting and digital transformation."
                 />
+
                 <meta
                     name="keywords"
                     content="technology services, software development, business consulting, IT strategy, Andro Solutions services"
