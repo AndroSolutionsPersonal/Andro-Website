@@ -50,7 +50,7 @@ export default function WhyUsScroll() {
         const end = (index + 1) / reasons.length;
         return {
             fill: useTransform(scrollYProgress, [start, end], ["#B0BCC8", "#113559"]),
-            opacity: useTransform(scrollYProgress, [start, end], [0.1, 1]),
+            opacity: useTransform(scrollYProgress, [start, end], [0.5, 1]),
         };
     };
 
