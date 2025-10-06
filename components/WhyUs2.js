@@ -85,7 +85,7 @@ export default function WhyUsScroll() {
                         originY: 0,
                         backgroundColor: "#113559",
                     }}
-                    className="absolute md:left-[26px] left-[20px] top-0 w-[3px] h-full rounded-full"
+                    className="absolute md:left-[26px] left-[16px] top-0 w-[3px] h-full rounded-full"
                 />
 
                 <div className="flex flex-col gap-32 relative">
