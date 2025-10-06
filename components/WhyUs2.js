@@ -50,7 +50,7 @@ export default function WhyUsScroll() {
         const end = (index + 1) / reasons.length;
         return {
             fill: useTransform(scrollYProgress, [start, end], ["#B0BCC8", "#113559"]),
-            opacity: useTransform(scrollYProgress, [start, end], [0.9, 1]),
+            opacity: useTransform(scrollYProgress, [start, end], [0.1, 1]),
         };
     };
 
@@ -85,7 +85,7 @@ export default function WhyUsScroll() {
                         originY: 0,
                         backgroundColor: "#113559",
                     }}
-                    className="absolute md:left-[30px] left-[20px] top-0 w-[3px] h-full rounded-full"
+                    className="absolute md:left-[26px] left-[20px] top-0 w-[3px] h-full rounded-full"
                 />
 
                 <div className="flex flex-col gap-32 relative">
