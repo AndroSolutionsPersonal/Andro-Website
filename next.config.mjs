@@ -5,9 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'arjrjtzgaauweroxjacr.supabase.co',  // Your Supabase project hostname
+        hostname: 'arjrjtzgaauweroxjacr.supabase.co',
       },
-      // Add more patterns if needed (e.g., for other external hosts)
+
     ],
   },
 };
