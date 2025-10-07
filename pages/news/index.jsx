@@ -72,7 +72,7 @@ export default function NewsIndex() {
                                             fill
                                             className="object-cover"
                                             placeholder="blur"
-                                            blurDataURL="/placeholder-blur.jpg"
+                                            blurDataURL="/Logo-1.png"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
                                     </div>
