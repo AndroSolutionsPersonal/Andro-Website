@@ -146,7 +146,7 @@ export default function NewsIndex() {
                             </div>
 
                             {/* Scrollable content */}
-                            <div className="overflow-y-auto h-[calc(90vh-200px)] md:h-[calc(90vh-400px)] p-8 md:p-12 bg-gray-50 scroll-smooth">
+                            <div className="overflow-y-auto h-[calc(90vh-190px)] md:h-[calc(90vh-400px)] p-8 md:p-12 bg-gray-50 scroll-smooth">
                                 <p className="text-gray-800 text-lg leading-relaxed whitespace-pre-line">
                                     {selected.content}
                                 </p>
