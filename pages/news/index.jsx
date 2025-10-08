@@ -60,7 +60,7 @@ export default function NewsIndex() {
                         {Array.from({ length: 6 }).map((_, i) => (
                             <div
                                 key={i}
-                                className="animate-pulse h-72 bg-gray-200 rounded-xl"
+                                className="animate-pulse h-80 bg-gray-200 rounded-xl"
                             ></div>
                         ))}
                     </div>
@@ -79,23 +79,24 @@ export default function NewsIndex() {
                                     className="cursor-pointer"
                                     onClick={() => setSelected(item)}
                                 >
-                                    <Card className="relative h-80 overflow-hidden rounded-2xl border-0 shadow-lg group">
+                                    <Card className="relative h-80 overflow-hidden rounded-2xl border-0 shadow-lg group bg-secondary/80">
                                         {/* Background Image */}
                                         <div className="absolute inset-0">
                                             <Image
                                                 src={item.image_url || "/placeholder-blur.jpg"}
                                                 alt={item.title}
                                                 fill
-                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                                className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
                                                 placeholder="blur"
                                                 blurDataURL="/placeholder-blur.jpg"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                                            {/* Overlay for contrast */}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                                         </div>
 
                                         {/* Overlay Text */}
                                         <CardContent className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
-                                            <h2 className="text-2xl font-bold line-clamp-2 drop-shadow-lg">
+                                            <h2 className="text-2xl font-bold line-clamp-2 drop-shadow-md">
                                                 {item.title}
                                             </h2>
                                             <p className="text-sm text-gray-200 mt-2 line-clamp-2">
@@ -118,9 +119,12 @@ export default function NewsIndex() {
                 {/* Dialog for full article */}
                 <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
                     {selected && (
-                        <DialogContent className="max-w-5xl w-full max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-white">
-                            {/* Header image */}
-                            <div className="relative h-96 w-full">
+                        <DialogContent
+                            className="max-w-[90vw] md:max-w-[1200px] w-full h-[90vh] overflow-hidden p-0 rounded-2xl bg-white shadow-2xl"
+                            style={{ scrollBehavior: "smooth" }}
+                        >
+                            {/* Fixed header image */}
+                            <div className="relative h-[400px] w-full">
                                 <Image
                                     src={selected.image_url || "/placeholder-blur.jpg"}
                                     alt={selected.title}
@@ -129,21 +133,21 @@ export default function NewsIndex() {
                                     placeholder="blur"
                                     blurDataURL="/placeholder-blur.jpg"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                                    <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+                                <div className="absolute bottom-6 left-8 right-8 text-white space-y-2">
+                                    <h2 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
                                         {selected.title}
                                     </h2>
-                                    <p className="text-sm text-gray-200">
+                                    <p className="text-sm md:text-base text-gray-200">
                                         By {selected.author || "Unknown"} •{" "}
                                         {new Date(selected.created_at).toLocaleDateString()}
                                     </p>
                                 </div>
                             </div>
 
-                            {/* Article content */}
-                            <div className="p-8 md:p-12 space-y-6">
-                                <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
+                            {/* Scrollable content */}
+                            <div className="overflow-y-auto h-[calc(90vh-400px)] p-8 md:p-12 bg-gray-50 scroll-smooth">
+                                <p className="text-gray-800 text-lg leading-relaxed whitespace-pre-line">
                                     {selected.content}
                                 </p>
                             </div>
