@@ -118,8 +118,9 @@ export default function NewsIndex() {
                 {/* Dialog for full article */}
                 <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
                     {selected && (
-                        <DialogContent className="max-w-3xl p-0 overflow-hidden rounded-xl">
-                            <div className="relative h-64 w-full">
+                        <DialogContent className="max-w-5xl w-full max-h-[90vh] overflow-y-auto p-0 rounded-2xl bg-white">
+                            {/* Header image */}
+                            <div className="relative h-96 w-full">
                                 <Image
                                     src={selected.image_url || "/placeholder-blur.jpg"}
                                     alt={selected.title}
@@ -128,9 +129,11 @@ export default function NewsIndex() {
                                     placeholder="blur"
                                     blurDataURL="/placeholder-blur.jpg"
                                 />
-                                <div className="absolute inset-0 bg-black/50"></div>
-                                <div className="absolute bottom-4 left-4 text-white">
-                                    <h2 className="text-2xl font-bold">{selected.title}</h2>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+                                    <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                                        {selected.title}
+                                    </h2>
                                     <p className="text-sm text-gray-200">
                                         By {selected.author || "Unknown"} •{" "}
                                         {new Date(selected.created_at).toLocaleDateString()}
@@ -138,8 +141,9 @@ export default function NewsIndex() {
                                 </div>
                             </div>
 
-                            <div className="p-6 bg-white">
-                                <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+                            {/* Article content */}
+                            <div className="p-8 md:p-12 space-y-6">
+                                <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line">
                                     {selected.content}
                                 </p>
                             </div>
