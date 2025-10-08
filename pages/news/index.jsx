@@ -133,7 +133,7 @@ export default function NewsIndex() {
                                     placeholder="blur"
                                     blurDataURL="/placeholder-blur.jpg"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-bl from-primary via-primary/70 md:bg-gradient-to-b md:from-primary md:via-primary/70 to-transparent"></div>
+                                <div className="absolute inset-0 bg-primary/70 md:bg-gradient-to-b md:from-primary md:via-primary/70 to-transparent"></div>
                                 <div className="absolute bottom-6 left-8 right-8 text-white space-y-2">
                                     <h2 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
                                         {selected.title}
