@@ -117,7 +117,7 @@ export default function NewsIndex() {
                 )}
 
                 {/* Dialog for full article */}
-                <Dialog open={!!selected} onOpenChange={() => setSelected(null)}>
+                <Dialog open={!!selected} onOpenChange={() => setSelected(null)} classname="test-primary">
                     {selected && (
                         <DialogContent
                             className="max-w-[90vw] md:max-w-[1200px] w-full h-[90vh] overflow-hidden p-0 rounded-2xl bg-white shadow-2xl"
@@ -133,7 +133,7 @@ export default function NewsIndex() {
                                     placeholder="blur"
                                     blurDataURL="/placeholder-blur.jpg"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
+                                <div className="absolute inset-0 bg-gradient-to-bl from-primary via-primary/70 md:bg-gradient-to-b md:from-primary md:via-primary/70 to-transparent"></div>
                                 <div className="absolute bottom-6 left-8 right-8 text-white space-y-2">
                                     <h2 className="text-3xl md:text-5xl font-extrabold leading-tight drop-shadow-lg">
                                         {selected.title}
@@ -146,7 +146,7 @@ export default function NewsIndex() {
                             </div>
 
                             {/* Scrollable content */}
-                            <div className="overflow-y-auto h-[calc(90vh-400px)] p-8 md:p-12 bg-gray-50 scroll-smooth">
+                            <div className="overflow-y-auto h-[calc(90vh-200px)] md:h-[calc(90vh-400px)] p-8 md:p-12 bg-gray-50 scroll-smooth">
                                 <p className="text-gray-800 text-lg leading-relaxed whitespace-pre-line">
                                     {selected.content}
                                 </p>
