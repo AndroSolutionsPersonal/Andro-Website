@@ -11,11 +11,11 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-lg mb-4 text-gray-300">Services</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Branding</a></li>
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Design</a></li>
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Marketing</a></li>
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Development</a></li>
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Consulting</a></li>
+                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">UI/UX</a></li>
+                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Fullstack Development</a></li>
+                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Social Media Management</a></li>
+                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Consultancy</a></li>
+                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Graphic Design</a></li>
               </ul>
             </div>
 
