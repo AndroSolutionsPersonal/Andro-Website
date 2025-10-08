@@ -124,7 +124,7 @@ export default function NewsIndex() {
                             style={{ scrollBehavior: "smooth" }}
                         >
                             {/* Fixed header image */}
-                            <div className="relative h-[400px] w-full">
+                            <div className="relative md:h-[400px] h-[300px] w-full">
                                 <Image
                                     src={selected.image_url || "/placeholder-blur.jpg"}
                                     alt={selected.title}
