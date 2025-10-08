@@ -151,15 +151,15 @@ export default function ServicesSection() {
 
     const headingY = useTransform(scrollYProgress, [0.3, 0.1], ["50%", "0%"]);
     const headingOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-    const paragraphY = useTransform(scrollYProgress, [0.08, 0.18], ["30%", "0%"]);
-    const paragraphOpacity = useTransform(scrollYProgress, [0.08, 0.18], [0, 1]);
+    const paragraphY = useTransform(scrollYProgress, [0.08, 0.3], ["30%", "0%"]);
+    const paragraphOpacity = useTransform(scrollYProgress, [0.08, 0.3], [0, 1]);
 
     return (
         <section ref={containerRef} className="relative bg-foreground" id="services">
             {/* Desktop */}
             <div className="hidden lg:flex flex-row min-h-screen items-stretch">
                 {/* Left column */}
-                <div className="w-1/2 relative">
+                <div className="w-1/2 relative md:mb-12">
                     <div className="sticky top-1/2 -translate-y-1/2 pl-[100px] text-left z-10">
                         <motion.h2
                             style={{ y: headingY, opacity: headingOpacity }}
