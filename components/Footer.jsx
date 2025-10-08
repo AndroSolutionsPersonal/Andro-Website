@@ -24,10 +24,11 @@ const Footer = () => {
               <h3 className="font-semibold text-lg mb-4 text-gray-300">Company</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Home</a></li>
-                <li><a href="/projects" className="hover:text-gray-100 text-sm text-secondary">Projects</a></li>
                 <li><a href="/about" className="hover:text-gray-100 text-sm text-secondary">About</a></li>
                 <li><a href="/services" className="hover:text-gray-100 text-sm text-secondary">Services</a></li>
-                <li><a href="contact" className="hover:text-gray-100 text-sm text-secondary">Contacts</a></li>
+                <li><a href="/projects" className="hover:text-gray-100 text-sm text-secondary">Projects</a></li>
+                <li><a href="/news" className="hover:text-gray-100 text-sm text-secondary">News</a></li>
+                <li><a href="/contact" className="hover:text-gray-100 text-sm text-secondary">Contacts</a></li>
               </ul>
             </div>
 
