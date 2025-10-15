@@ -14,7 +14,8 @@ import AboutHero from "@/assets/ProjectsHeader.jpg"
 import AndroWebsite from "@/assets/projects/AndroWebsite.png"
 import SpawnPoint from "@/assets/projects/SpawnPoint.png"
 import StreamSynx from "@/assets/projects/StreamSynx.png"
-
+import FPL from "@/assets/fpl.jpg"
+import CL from "@/assets/cigar-lounge/WD ad1.jpg"
 // Framer Motion imports for the new Graphics Design Section
 import GraphicsDesignSection from "@/components/GraphicsDesignSection"
 
@@ -66,6 +67,30 @@ const projects = [
     technologies: ["Next.js", "Firebase", "Node.js"],
     details:
       "Homely is a service marketplace for household work. Clients can hire, track, and rate providers, while providers manage schedules and payments within the platform.",
+  },
+  {
+    id: "#005",
+    title: "FPL Bot",
+    description:
+        "The FPL Bot is an intelligent Fantasy Premier League assistant that runs directly on Telegram, providing personalized advice tailored to your specific team. By connecting with your FPL account, it analyzes your squad, budget, and performance to offer smart transfer suggestions, captain picks, and bench decisions each gameweek. The bot continuously updates with real-time player data, including form, injuries, and fixtures, ensuring you always make informed choices. Designed for both casual players and serious managers, it delivers all insights through an easy-to-use chat interface — making managing your FPL team simple, fast, and effective.",
+    image: FPL,
+    liveDemo: "https://t.me/FPL_personal_AI_bot",
+    github: "https://github.com/Kidus-M/FPLbot",
+    technologies: ["Python", "PTB", "Telegram Father Bot"],
+    details:
+        "The FPL Bot is an intelligent Fantasy Premier League assistant that runs directly on Telegram, providing personalized advice tailored to your specific team. By connecting with your FPL account, it analyzes your squad, budget, and performance to offer smart transfer suggestions, captain picks, and bench decisions each gameweek. The bot continuously updates with real-time player data, including form, injuries, and fixtures, ensuring you always make informed choices. Designed for both casual players and serious managers, it delivers all insights through an easy-to-use chat interface — making managing your FPL team simple, fast, and effective.",
+  },
+  {
+    id: "#006",
+    title: "Wolfden Cigar Lounge",
+    description:
+        "The Wolfden Cigar Lounge website is your gateway to the ultimate cigar experience. Designed with elegance and ease in mind, the site showcases everything the lounge has to offer — from its curated cigar collections and premium drink menu to exclusive membership options and upcoming events. Visitors can explore the rich atmosphere of Wolfden through stunning visuals, learn about cigar pairings, or reserve a private lounge space directly online. The site also features a news and blog section for cigar tips and lifestyle insights, as well as an integrated contact and booking system for seamless access. With a refined design that reflects the sophistication of the lounge itself, the Wolfden website brings the essence of luxury, community, and craftsmanship to your screen.",
+    image: CL,
+    liveDemo: "https://t.me/FPL_personal_AI_bot",
+    github: "https://github.com/example/example",
+    technologies: ["Next.js", "Firebase", "Node.js"],
+    details:
+        "The Wolfden Cigar Lounge website is your gateway to the ultimate cigar experience. Designed with elegance and ease in mind, the site showcases everything the lounge has to offer — from its curated cigar collections and premium drink menu to exclusive membership options and upcoming events. Visitors can explore the rich atmosphere of Wolfden through stunning visuals, learn about cigar pairings, or reserve a private lounge space directly online. The site also features a news and blog section for cigar tips and lifestyle insights, as well as an integrated contact and booking system for seamless access. With a refined design that reflects the sophistication of the lounge itself, the Wolfden website brings the essence of luxury, community, and craftsmanship to your screen.",
   },
 ]
 
