@@ -34,8 +34,8 @@ export default function AboutPage() {
             <WhyUs/>
             <div>
 
-            <div className="sticky top-0"><VisionMission /></div>
-<div className="relative"><Founders/></div>
+            <div className="md:sticky md:top-0"><VisionMission /></div>
+<div className="md:relative"><Founders/></div>
             </div>
 
 
