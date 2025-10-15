@@ -32,8 +32,11 @@ export default function AboutPage() {
 
             <Hero/>
             <WhyUs/>
-            <VisionMission />
-            <Founders/>
+            <div>
+
+            <div className="sticky top-0"><VisionMission /></div>
+<div className="relative"><Founders/></div>
+            </div>
 
 
             {/* Additional About Content */}
