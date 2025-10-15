@@ -31,6 +31,9 @@ import CigarLounge3 from "@/assets/cigar-lounge/WD ad1.jpg";
 import CigarLounge4 from "@/assets/cigar-lounge/WD ad2.jpg";
 import CigarLounge5 from "@/assets/cigar-lounge/WD ad10.jpg";
 
+import RomanPrimary from "@/assets/Romans/primary.png"
+import RomanSecondary from "@/assets/Romans/secondary.png"
+
 export default function AndroGraphicsShowcase() {
     const [filter, setFilter] = useState("All");
     const [preview, setPreview] = useState(null);
@@ -56,6 +59,12 @@ export default function AndroGraphicsShowcase() {
             title: "Miss Summers",
             categories: ["Branding", "Banners"],
             images: [MissSummers, Missprimary, Misscolors, Missicons, Missfont1, Missfont2],
+        },
+        {
+            id: "g-04",
+            title: "Romans",
+            categories: ["Branding"],
+            images: [RomanPrimary, RomanSecondary],
         },
     ];
 
