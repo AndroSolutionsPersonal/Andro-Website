@@ -17,6 +17,14 @@ import Androfont2 from "@/assets/Andro/font2.png"
 import Androcolors from "@/assets/Andro/colors.png"
 import Androbc1 from "@/assets/Andro/bc1.png"
 import Androbc2 from "@/assets/Andro/bc2.png"
+
+import Missprimary from "@/assets/MissSummers/primary.png"
+import Missicons from "@/assets/MissSummers/icons.png"
+import Missfont1 from "@/assets/MissSummers/font1.png"
+import Missfont2 from "@/assets/MissSummers/font2.png"
+import Misscolors from "@/assets/MissSummers/colors.png"
+import MissSummers from "@/assets/MissSummers/summers.png"
+
 import CigarLounge1 from "@/assets/cigar-lounge/Jazz Night.jpg";
 import CigarLounge2 from "@/assets/cigar-lounge/New Years Cigar Lounge.jpg";
 import CigarLounge3 from "@/assets/cigar-lounge/WD ad1.jpg";
@@ -42,6 +50,12 @@ export default function AndroGraphicsShowcase() {
             title: "Cigar Lounge",
             categories: ["Posts", "Banners"],
             images: [CigarLounge1, CigarLounge2, CigarLounge3, CigarLounge4, CigarLounge5],
+        },
+        {
+            id: "g-03",
+            title: "Miss Summers",
+            categories: ["Branding", "Banners"],
+            images: [MissSummers, Missprimary, Misscolors, Missicons, Missfont1, Missfont2],
         },
     ];
 
