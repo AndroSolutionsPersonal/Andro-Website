@@ -86,7 +86,7 @@ const projects = [
     description:
         "The Wolfden Cigar Lounge website is your gateway to the ultimate cigar experience. Designed with elegance and ease in mind, the site showcases everything the lounge has to offer — from its curated cigar collections and premium drink menu to exclusive membership options and upcoming events. Visitors can explore the rich atmosphere of Wolfden through stunning visuals, learn about cigar pairings, or reserve a private lounge space directly online. The site also features a news and blog section for cigar tips and lifestyle insights, as well as an integrated contact and booking system for seamless access. With a refined design that reflects the sophistication of the lounge itself, the Wolfden website brings the essence of luxury, community, and craftsmanship to your screen.",
     image: CL,
-    liveDemo: "https://t.me/FPL_personal_AI_bot",
+    liveDemo: "wolfdenaddis.com",
     github: "https://github.com/example/example",
     technologies: ["Next.js", "Firebase", "Node.js"],
     details:
