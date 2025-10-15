@@ -45,7 +45,13 @@ export default function ProjectCard({ project, onDetails, onLink }) {
                         <Github size={16} /> <span>GitHub</span>
                     </button>
                     <button
-                        onClick={() => onLink(project.liveDemo, "Live Demo")}
+                        onClick={() => {
+                            const url = project.liveDemo.startsWith("http")
+                                ? project.liveDemo
+                                : `https://${project.liveDemo}`;
+                            window.open(url, "_blank");
+                        }}
+
                         className="flex items-center gap-2 border border-white/40 px-3 py-2 rounded-lg hover:scale-110 transition"
                     >
                         <ExternalLink size={16} /> <span>Live Demo</span>
