@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Head from "next/head";
 export default function NewsIndex() {
     const [news, setNews] = useState([]);
     const [search, setSearch] = useState("");
