@@ -38,34 +38,34 @@ export default function NewsIndex() {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-                <!-- Page Title -->
+
                 <title>Andro Solutions | News</title>
 
-                <!-- Meta Description -->
+
                 <meta name="description"
                       content="Stay updated with the latest news, stories, and insights from Andro Solutions."/>
 
-                <!-- Meta Keywords -->
+
                 <meta name="keywords"
                       content="Andro Solutions, News, Updates, Technology, Design, UI, UX, Graphic Design"/>
 
-                <!-- Author -->
+
                 <meta name="author" content="Andro Solutions"/>
 
-                <!-- Favicon -->
+
                 <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-                <!-- Google Fonts -->
+
                 <link href="https://db.onlinewebfonts.com/c/65c79a29b6ed725883911cb318380955?family=Gilmer+Regular"
                       rel="stylesheet"/>
                 <link
                     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
                     rel="stylesheet"/>
 
-                <!-- Tailwind CSS -->
-                <link href="/path-to-tailwind.css" rel="stylesheet"/>
 
-                <!-- Open Graph / Social Meta -->
+
+
+
                 <meta property="og:title" content="Andro Solutions | News"/>
                 <meta property="og:description"
                       content="Stay updated with the latest news, stories, and insights from Andro Solutions."/>
@@ -73,7 +73,7 @@ export default function NewsIndex() {
                 <meta property="og:url" content="https://yourwebsite.com/news"/>
                 <meta property="og:type" content="website"/>
 
-                <!-- Twitter Card -->
+
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content="Andro Solutions | News"/>
                 <meta name="twitter:description"
