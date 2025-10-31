@@ -133,7 +133,7 @@ export default function AdminNews() {
 
                 {/* Add News Dialog */}
                 <Dialog open={open} onOpenChange={setOpen}>
-                    <DialogContent className="sm:max-w-[600px] rounded-xl">
+                    <DialogContent className="sm:max-w-[600px] rounded-xl max-h-[90vh] overflow-y-auto scrollbar-thin scrollbar-thumb-[#113559]/30 scrollbar-track-transparent">
                         <DialogHeader>
                             <DialogTitle className="text-xl font-semibold text-[#113559]">
                                 {editing ? "Edit News" : "Create News"}
