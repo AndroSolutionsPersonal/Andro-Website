@@ -17,7 +17,7 @@ const socials = [
     {
         name: "Instagram",
         icon: <FaInstagram className="w-8 h-8 text-pink-500" />,
-        link: "https://instagram.com/yourpage",
+        link: "https://www.instagram.com/andro.solutions/?utm_source=ig_web_button_share_sheet",
     },
     {
         name: "LinkedIn",
