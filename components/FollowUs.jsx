@@ -27,7 +27,7 @@ const socials = [
     {
         name: "Telegram",
         icon: <FaTelegram className="w-8 h-8 text-sky-500" />,
-        link: "https://t.me/yourpage",
+        link: "https://t.me/andro_solutions",
     },
     {
         name: "Facebook",
