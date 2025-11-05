@@ -36,7 +36,7 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-lg mb-4 text-gray-300">Socials</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Instagram</a></li>
+                <li><a href="https://www.instagram.com/andro.solutions/?utm_source=ig_web_button_share_sheet" className="hover:text-gray-100 text-sm text-secondary">Instagram</a></li>
                 <li><a href="https://t.me/andro_solutions" className="hover:text-gray-100 text-sm text-secondary">Telegram</a></li>
                 <li><a href="https://www.linkedin.com/company/andro-solutions/" className="hover:text-gray-100 text-sm text-secondary">LinkedIn</a></li>
                 <li><a href="#" className="hover:text-gray-100 text-sm text-secondary">Facebook</a></li>
