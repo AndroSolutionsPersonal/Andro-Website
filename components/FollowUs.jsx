@@ -22,7 +22,7 @@ const socials = [
     {
         name: "LinkedIn",
         icon: <FaLinkedin className="w-8 h-8 text-blue-600" />,
-        link: "https://linkedin.com/company/yourpage",
+        link: "https://www.linkedin.com/company/andro-solutions/",
     },
     {
         name: "Telegram",
