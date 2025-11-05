@@ -41,7 +41,7 @@ const socials = [
                 <FaTwitter className="w-8 h-8 text-white" />
             )
         ),
-        link: "https://x.com/yourpage",
+        link: "https://x.com/Andro_Solutions",
     },
 ];
 
