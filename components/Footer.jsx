@@ -40,6 +40,7 @@ const Footer = () => {
                 <li><a href="https://t.me/andro_solutions" className="hover:text-gray-100 text-sm text-secondary">Telegram</a></li>
                 <li><a href="https://www.linkedin.com/company/andro-solutions/" className="hover:text-gray-100 text-sm text-secondary">LinkedIn</a></li>
                 <li><a href="https://www.facebook.com/share/17FYccYdb6/" className="hover:text-gray-100 text-sm text-secondary">Facebook</a></li>
+                <li><a href="https://x.com/Andro_Solutions" className="hover:text-gray-100 text-sm text-secondary">X</a></li>
               </ul>
             </div>
           </div>
