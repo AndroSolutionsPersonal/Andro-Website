@@ -32,7 +32,7 @@ const socials = [
     {
         name: "Facebook",
         icon: <FaFacebookF className="w-8 h-8 text-blue-700" />,
-        link: "https://facebook.com/yourpage",
+        link: "https://www.facebook.com/share/17FYccYdb6/",
     },
     {
         name: "X",
