@@ -34,52 +34,27 @@ export default function NewsIndex() {
     return (
         <div className="pt-24 px-6 md:px-12 bg-gray-50 min-h-screen">
             <Head>
-                <meta charSet="UTF-8"/>
-                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Andro Solutions News — Tech Updates, Insights & Announcements</title>
 
+                <meta
+                    name="description"
+                    content="Stay updated with news from Andro Solutions. Tech insights, product updates, announcements, and industry trends."
+                />
+                <meta
+                    name="keywords"
+                    content="tech news, Andro Solutions updates, product announcements, technology insights"
+                />
 
-                <title>Andro Solutions | News</title>
-
-
-                <meta name="description"
-                      content="Stay updated with the latest news, stories, and insights from Andro Solutions."/>
-
-
-                <meta name="keywords"
-                      content="Andro Solutions, News, Updates, Technology, Design, UI, UX, Graphic Design"/>
-
-
-                <meta name="author" content="Andro Solutions"/>
-
-
-                <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-
-
-                <link href="https://db.onlinewebfonts.com/c/65c79a29b6ed725883911cb318380955?family=Gilmer+Regular"
-                      rel="stylesheet"/>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
-                    rel="stylesheet"/>
-
-
-
-
-
-                <meta property="og:title" content="Andro Solutions | News"/>
-                <meta property="og:description"
-                      content="Stay updated with the latest news, stories, and insights from Andro Solutions."/>
-                <meta property="og:image" content="/path-to-og-image.jpg"/>
-                <meta property="og:url" content="https://yourwebsite.com/news"/>
+                <meta property="og:title" content="Andro Solutions — Latest News"/>
+                <meta
+                    property="og:description"
+                    content="Discover updates, insights, announcements, and stories from the Andro Solutions team."
+                />
+                <meta property="og:image" content="/Logo-1.png"/>
                 <meta property="og:type" content="website"/>
-
-
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content="Andro Solutions | News"/>
-                <meta name="twitter:description"
-                      content="Stay updated with the latest news, stories, and insights from Andro Solutions."/>
-                <meta name="twitter:image" content="/path-to-og-image.jpg"/>
+                <meta property="og:url" content="https://andro-solutions.tech/news"/>
             </Head>
+
 
             <div className="max-w-6xl mx-auto space-y-10">
                 {/* Header */}
