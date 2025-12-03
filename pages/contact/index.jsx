@@ -28,19 +28,27 @@ const ContactPage = () => {
   return (
       <main className="min-h-screen w-full bg-foreground text-white font-sans overflow-clip">
           <Head>
-              <title>Contact Us | Andro Solutions</title>
-              <meta name="description"
-                    content="Get in touch with Andro Solutions. Let’s discuss how we can collaborate on technology, innovation, and business growth."/>
-              <meta name="keywords"
-                    content="contact Andro Solutions, business inquiry, IT consulting contact, technology partner"/>
-              <meta property="og:title" content="Contact Us | Andro Solutions"/>
-              <meta property="og:description"
-                    content="Reach out to Andro Solutions and start your journey toward innovation and success."/>
-              <meta property="og:image" content="/og-images/contact.jpg"/>
-              <meta property="og:type" content="website"/>
-              <meta property="og:url" content="https://yourdomain.com/contact"/>
+              <title>Contact Andro Solutions — Start Your Digital Project Today</title>
 
+              <meta
+                  name="description"
+                  content="Ready to build your digital product? Contact Andro Solutions for consultations, quotes, partnerships, and custom development."
+              />
+              <meta
+                  name="keywords"
+                  content="contact Andro Solutions, hire developers, project consultation, tech support"
+              />
+
+              <meta property="og:title" content="Contact Andro Solutions"/>
+              <meta
+                  property="og:description"
+                  content="Get in touch with our team to discuss your project, get quotes, or start building your next digital product."
+              />
+              <meta property="og:image" content="/Logo-1.png"/>
+              <meta property="og:type" content="website"/>
+              <meta property="og:url" content="https://andro-solutions.tech/contact"/>
           </Head>
+
 
           {/* Hero Header */}
           <motion.section
