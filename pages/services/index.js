@@ -11,25 +11,27 @@ export default function Services() {
     return (
         <>
             <Head>
-                <title>Our Services | Andro Solutions</title>
-                <meta
-                    name="description"
-                    content="Discover Andro Solutions' services — from software development and design to business consulting and digital transformation."
-                />
+                <title>Services — Web, App, AI & Software Development | Andro Solutions</title>
 
                 <meta
-                    name="keywords"
-                    content="technology services, software development, business consulting, IT strategy, Andro Solutions services"
+                    name="description"
+                    content="Explore our full range of services: web development, mobile apps, AI solutions, UI/UX design, and custom software—built for speed, scalability, and startup-friendly pricing."
                 />
-                <meta property="og:title" content="Our Services | Andro Solutions" />
+                <meta
+                    name="keywords"
+                    content="services, software development services, app development, AI solutions, web development, UI/UX design"
+                />
+
+                <meta property="og:title" content="Andro Solutions — Our Services"/>
                 <meta
                     property="og:description"
-                    content="Explore our tailored technology and business solutions designed to accelerate your success."
+                    content="Web, mobile, AI, UI/UX, and custom software solutions crafted for performance and scalability."
                 />
-                <meta property="og:image" content="/og-images/services.jpg" />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/services" />
+                <meta property="og:image" content="/Logo-1.png"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://andro-solutions.tech/services"/>
             </Head>
+
 
             <>
                 <ServiceHero />
