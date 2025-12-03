@@ -8,18 +8,27 @@ export default function Home() {
     return (
         <div className="">
             <Head>
-                <title>Andro Solutions | Driving Innovation in Technology & Business</title>
-                <meta name="description"
-                      content="Andro Solutions delivers innovative technology, software, and business solutions to help organizations grow and succeed. Explore our services, projects, and expertise."/>
-                <meta name="keywords"
-                      content="Andro Solutions, technology solutions, software development, business innovation, IT services"/>
-                <meta property="og:title" content="Andro Solutions | Driving Innovation in Technology & Business"/>
-                <meta property="og:description"
-                      content="We help businesses transform with cutting-edge technology, creative solutions, and impactful results."/>
-                <meta property="og:image" content="/og-images/home.jpg"/>
+                <title>Andro Solutions — Affordable Scalable Digital Product Development</title>
+
+                <meta
+                    name="description"
+                    content="We build high-value digital products that scale your business without draining your budget. Apps, websites, and software built smart, fast, and cost-efficient."
+                />
+                <meta
+                    name="keywords"
+                    content="software development, web development, app development, AI solutions, digital products, Andro Solutions"
+                />
+
+                <meta property="og:title" content="Andro Solutions — Digital Product Development"/>
+                <meta
+                    property="og:description"
+                    content="High-value digital solutions built smart, fast, and affordably. Transform your business with modern software and scalable tech."
+                />
+                <meta property="og:image" content="/Logo-1.png"/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content=""/>
+                <meta property="og:url" content="https://andro-solutions.tech/"/>
             </Head>
+
 
             <Hero/>
             <ServicesSection/>
