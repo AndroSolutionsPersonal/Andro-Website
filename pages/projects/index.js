@@ -141,24 +141,27 @@ export default function ProjectsPage() {
   return (
     <article id="projects" className="w-[100vw] p-2 md:p-4">
       <Head>
-        <title>Our Projects | Andro Solutions</title>
+        <title>Our Projects — Digital Products & Case Studies | Andro Solutions</title>
+
         <meta
-          name="description"
-          content="See how Andro Solutions has helped businesses transform with impactful technology and innovation projects."
+            name="description"
+            content="Explore real digital products we’ve built: modern, scalable, high-performance solutions made for startups and enterprises alike."
         />
         <meta
-          name="keywords"
-          content="Andro Solutions projects, technology case studies, innovation portfolio, IT solutions"
+            name="keywords"
+            content="projects, portfolio, software case studies, app projects, Andro Solutions work"
         />
-        <meta property="og:title" content="Our Projects | Andro Solutions" />
+
+        <meta property="og:title" content="Andro Solutions — Projects"/>
         <meta
-          property="og:description"
-          content="Explore real-world projects where we’ve delivered innovation and measurable results."
+            property="og:description"
+            content="See the digital products and real-world solutions we’ve delivered across industries."
         />
-        <meta property="og:image" content="/og-images/projects.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/projects" />
+        <meta property="og:image" content="/Logo-1.png"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://andro-solutions.tech/projects"/>
       </Head>
+
 
       <ProjectsHeader />
 
