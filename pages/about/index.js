@@ -15,20 +15,27 @@ export default function AboutPage() {
         <main className="min-h-screen">
             {/* Hero Section */}
             <Head>
-                <title>About Us | Andro Solutions</title>
+                <title>About Andro Solutions — Building Smart, Scalable Tech</title>
 
-                <meta name="description"
-                      content="Learn more about Andro Solutions, our mission, vision, and the team driving technology and business innovation."/>
-                <meta name="keywords"
-                      content="About Andro Solutions, technology company, business innovation team, IT experts"/>
-                <meta property="og:title" content="About Us | Andro Solutions"/>
-                <meta property="og:description"
-                      content="Discover our story, values, and the people behind Andro Solutions."/>
-                <meta property="og:image" content="/og-images/about.jpg"/>
+                <meta
+                    name="description"
+                    content="Learn who we are and how Andro Solutions helps startups and businesses build scalable, affordable digital products with modern engineering and smart design."
+                />
+                <meta
+                    name="keywords"
+                    content="About Andro Solutions, software company, tech team, digital innovation, engineering team"
+                />
+
+                <meta property="og:title" content="About Andro Solutions"/>
+                <meta
+                    property="og:description"
+                    content="Discover our story, mission, values, and the team behind Andro Solutions."
+                />
+                <meta property="og:image" content="/Logo-1.png"/>
                 <meta property="og:type" content="website"/>
-
-                <meta property="og:url" content="https://yourdomain.com/about"/>
+                <meta property="og:url" content="https://andro-solutions.tech/about"/>
             </Head>
+
 
             <Hero/>
             <WhyUs/>
