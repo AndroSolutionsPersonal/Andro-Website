@@ -44,6 +44,7 @@ export default function NewsIndex() {
                     name="keywords"
                     content="tech news, Andro Solutions updates, product announcements, technology insights"
                 />
+                <link rel="canonical" href="https://www.andro-solutions.tech/news" />
 
                 <meta property="og:title" content="Andro Solutions — Latest News"/>
                 <meta
