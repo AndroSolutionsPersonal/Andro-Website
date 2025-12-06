@@ -26,7 +26,8 @@ export default function Home() {
                 />
                 <meta property="og:image" content="/Logo-1.png"/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://andro-solutions.tech/"/>
+                <link rel="canonical" href="https://www.andro-solutions.tech/" />
+                <meta property="og:url" content="https://www.andro-solutions.tech/"/>
             </Head>
 
 
