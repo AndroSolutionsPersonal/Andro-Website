@@ -27,6 +27,7 @@ export default function Services() {
                     property="og:description"
                     content="Web, mobile, AI, UI/UX, and custom software solutions crafted for performance and scalability."
                 />
+                <link rel="canonical" href="https://www.andro-solutions.tech/services" />
                 <meta property="og:image" content="/Logo-1.png"/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:url" content="https://andro-solutions.tech/services"/>
