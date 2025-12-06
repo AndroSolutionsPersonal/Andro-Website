@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://andro-solutions.tech/</loc>
+        <loc>https://www.andro-solutions.tech/</loc>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://andro-solutions.tech/about</loc>
+        <loc>https://www.andro-solutions.tech/about</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://andro-solutions.tech/services</loc>
+        <loc>https://www.andro-solutions.tech/services</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://andro-solutions.tech/projects</loc>
+        <loc>https://www.andro-solutions.tech/projects</loc>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://andro-solutions.tech/news</loc>
+        <loc>https://www.andro-solutions.tech/news</loc>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://andro-solutions.tech/contact</loc>
+        <loc>https://www.andro-solutions.tech/contact</loc>
         <priority>0.7</priority>
     </url>
 </urlset>
