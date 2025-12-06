@@ -160,6 +160,7 @@ export default function ProjectsPage() {
         <meta property="og:image" content="/Logo-1.png"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="https://andro-solutions.tech/projects"/>
+        <link rel="canonical" href="https://www.andro-solutions.tech/projects" />
       </Head>
 
 
