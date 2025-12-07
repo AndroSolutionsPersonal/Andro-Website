@@ -28,7 +28,7 @@ const ContactPage = () => {
   return (
       <main className="min-h-screen w-full bg-foreground text-white font-sans overflow-clip">
           <Head>
-              <title>Contact Andro Solutions — Start Your Digital Project Today</title>
+              <title>Contact Andro Solutions — Start Your Digital Project</title>
 
               <meta
                   name="description"
@@ -36,20 +36,21 @@ const ContactPage = () => {
               />
               <meta
                   name="keywords"
-                  content="contact Andro Solutions, hire developers, project consultation, tech support"
+                  content="contact Andro Solutions, hire developers, consultation, project planning"
               />
 
-              <meta property="og:title" content="Contact Andro Solutions"/>
-              <meta
-                  property="og:description"
-                  content="Get in touch with our team to discuss your project, get quotes, or start building your next digital product."
-              />
-              <meta property="og:image" content="/Logo-1.png"/>
-              <meta property="og:type" content="website"/>
-              <meta property="og:url" content="https://andro-solutions.tech/contact"/>
               <link rel="canonical" href="https://www.andro-solutions.tech/contact" />
 
+              <meta property="og:title" content="Contact Andro Solutions" />
+              <meta
+                  property="og:description"
+                  content="Get in touch with our team to discuss your project or start building your next digital product."
+              />
+              <meta property="og:image" content="/Logo-1.png" />
+              <meta property="og:url" content="https://www.andro-solutions.tech/contact" />
+              <meta property="og:type" content="website" />
           </Head>
+
 
 
           {/* Hero Header */}
