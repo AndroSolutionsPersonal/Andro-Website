@@ -42,19 +42,21 @@ export default function NewsIndex() {
                 />
                 <meta
                     name="keywords"
-                    content="tech news, Andro Solutions updates, product announcements, technology insights"
+                    content="tech news, product updates, announcements, technology insights"
                 />
+
                 <link rel="canonical" href="https://www.andro-solutions.tech/news" />
 
-                <meta property="og:title" content="Andro Solutions — Latest News"/>
+                <meta property="og:title" content="Latest News — Andro Solutions" />
                 <meta
                     property="og:description"
                     content="Discover updates, insights, announcements, and stories from the Andro Solutions team."
                 />
-                <meta property="og:image" content="/Logo-1.png"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://andro-solutions.tech/news"/>
+                <meta property="og:image" content="/Logo-1.png" />
+                <meta property="og:url" content="https://www.andro-solutions.tech/news" />
+                <meta property="og:type" content="website" />
             </Head>
+
 
 
             <div className="max-w-6xl mx-auto space-y-10">
