@@ -19,19 +19,21 @@ export default function Services() {
                 />
                 <meta
                     name="keywords"
-                    content="services, software development services, app development, AI solutions, web development, UI/UX design"
+                    content="services, software development services, app development, AI solutions, UI/UX design"
                 />
 
-                <meta property="og:title" content="Andro Solutions — Our Services"/>
+                <link rel="canonical" href="https://www.andro-solutions.tech/services" />
+
+                <meta property="og:title" content="Our Services — Andro Solutions" />
                 <meta
                     property="og:description"
                     content="Web, mobile, AI, UI/UX, and custom software solutions crafted for performance and scalability."
                 />
-                <link rel="canonical" href="https://www.andro-solutions.tech/services" />
-                <meta property="og:image" content="/Logo-1.png"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://andro-solutions.tech/services"/>
+                <meta property="og:image" content="/Logo-1.png" />
+                <meta property="og:url" content="https://www.andro-solutions.tech/services" />
+                <meta property="og:type" content="website" />
             </Head>
+
 
 
             <>
