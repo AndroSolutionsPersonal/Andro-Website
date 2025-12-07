@@ -149,19 +149,21 @@ export default function ProjectsPage() {
         />
         <meta
             name="keywords"
-            content="projects, portfolio, software case studies, app projects, Andro Solutions work"
+            content="projects, portfolio, case studies, app projects, software development portfolio"
         />
 
-        <meta property="og:title" content="Andro Solutions — Projects"/>
+        <link rel="canonical" href="https://www.andro-solutions.tech/projects" />
+
+        <meta property="og:title" content="Projects — Andro Solutions" />
         <meta
             property="og:description"
             content="See the digital products and real-world solutions we’ve delivered across industries."
         />
-        <meta property="og:image" content="/Logo-1.png"/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://andro-solutions.tech/projects"/>
-        <link rel="canonical" href="https://www.andro-solutions.tech/projects" />
+        <meta property="og:image" content="/Logo-1.png" />
+        <meta property="og:url" content="https://www.andro-solutions.tech/projects" />
+        <meta property="og:type" content="website" />
       </Head>
+
 
 
       <ProjectsHeader />
