@@ -19,16 +19,33 @@ export default function Home() {
                     content="software development, web development, app development, AI solutions, digital products, Andro Solutions"
                 />
 
-                <meta property="og:title" content="Andro Solutions — Digital Product Development"/>
+                <link rel="canonical" href="https://www.andro-solutions.tech/" />
+
+                <meta property="og:title" content="Andro Solutions — Digital Product Development" />
                 <meta
                     property="og:description"
                     content="High-value digital solutions built smart, fast, and affordably. Transform your business with modern software and scalable tech."
                 />
-                <meta property="og:image" content="/Logo-1.png"/>
-                <meta property="og:type" content="website"/>
-                <link rel="canonical" href="https://www.andro-solutions.tech/" />
-                <meta property="og:url" content="https://www.andro-solutions.tech/"/>
+                <meta property="og:image" content="/Logo-1.png" />
+                <meta property="og:url" content="https://www.andro-solutions.tech/" />
+                <meta property="og:type" content="website" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            "name": "Andro Solutions",
+                            "url": "https://www.andro-solutions.tech",
+                            "logo": "https://www.andro-solutions.tech/Logo-1.png",
+                            "description":
+                                "We build high-value scalable digital solutions for growing businesses.",
+                        }),
+                    }}
+                />
             </Head>
+
 
 
             <Hero/>
