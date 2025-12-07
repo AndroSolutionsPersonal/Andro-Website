@@ -26,17 +26,30 @@ export default function AboutPage() {
                     content="About Andro Solutions, software company, tech team, digital innovation, engineering team"
                 />
 
-                <meta property="og:title" content="About Andro Solutions"/>
+                <link rel="canonical" href="https://www.andro-solutions.tech/about" />
+
+                <meta property="og:title" content="About Andro Solutions" />
                 <meta
                     property="og:description"
                     content="Discover our story, mission, values, and the team behind Andro Solutions."
                 />
-                <link rel="canonical" href="https://www.andro-solutions.tech/about" />
+                <meta property="og:image" content="/Logo-1.png" />
+                <meta property="og:url" content="https://www.andro-solutions.tech/about" />
+                <meta property="og:type" content="website" />
 
-                <meta property="og:image" content="/Logo-1.png"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://andro-solutions.tech/about"/>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "AboutPage",
+                            "url": "https://www.andro-solutions.tech/about",
+                            "name": "About Andro Solutions",
+                        }),
+                    }}
+                />
             </Head>
+
 
 
             <Hero/>
