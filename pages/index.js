@@ -51,16 +51,7 @@ export default function Home() {
             <Hero/>
             <ServicesSection/>
             <MissionVision/>
-            <div>Andro Solutions is a modern software development company focused on building
-                scalable, high-value digital products for startups and businesses. We specialize
-                in web development, mobile apps, AI-driven solutions, UI/UX design, and
-                custom-built platforms engineered for long-term growth. Our team combines smart
-                architecture, clean engineering, and startup-friendly pricing to deliver
-                technology that performs reliably, adapts quickly, and helps organizations scale
-                without unnecessary cost. Whether you’re building a new digital product or
-                improving an existing one, Andro Solutions provides fast, efficient, and
-                future-ready solutions designed around your business needs.
-            </div>
+
             <div>
             <section className="px-2 pb-2 md:px-4 md:pb-4 overflow-hidden z-10 relative">
                 <ContactSection/>
