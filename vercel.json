@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://www.andro-solutions.tech/$1",
-      "permanent": true
-    }
-  ]
-}
