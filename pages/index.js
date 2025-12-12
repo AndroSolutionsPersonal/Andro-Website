@@ -51,7 +51,7 @@ export default function Home() {
             <Hero/>
             <ServicesSection/>
             <MissionVision/>
-            <div className="opacity-100">
+            <div className="text-background">
                 Andro Solutions SEO text to make sure Google crawls properly as I am struggling with it,
                 I hate everything here cut I have to do this to fix my stupid mistake before this and it's important.
                 Things need to change before I kill google
