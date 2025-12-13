@@ -54,7 +54,7 @@ export default function Home() {
             <div className="text-background">
                 Andro Solutions SEO text to make sure Google crawls properly as I am struggling with it,
                 I hate everything here cut I have to do this to fix my stupid mistake before this and it's important.
-                Things need to change before I kill google
+                Things need to change before I kill google. I hate SEO now for real why is it a sad world here. I am sad as shit
             </div>
 
 
